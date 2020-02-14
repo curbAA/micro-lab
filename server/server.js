@@ -11,7 +11,7 @@
 // ──────────────────────────────────────────────────────────────── ANCHOR LOCATIONS ─────
 //
 
-    const _publicDir = "C:/Users/prost/Desktop/Programación/Node/micro tool/public";
+    const _publicDir = "C:/Users/prost/Desktop/Programación/Node/microbit/microlab/public";
 
     app.use("/home", express.static(_publicDir + "/home"));
     app.use("/public", express.static(_publicDir));
