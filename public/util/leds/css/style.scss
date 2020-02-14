@@ -1,0 +1,70 @@
+div.content{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    height: 70vh;
+
+    // border:1px solid red;
+    
+    //LED PANNEL
+    div.led-grid{
+        display:grid;
+        
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto;
+        gap:2vh;
+        
+        width:50vh;
+        height:50vh;
+
+        max-width: 70vw;
+        max-height: 70vw;
+
+        // border:1px solid red;
+        
+        button.led{
+            height:100%;
+            width:100%;
+            
+            // border:1px solid red;
+            border:none;
+            border-radius:1vh;
+            box-shadow: 1vh 1vh #0000001f;
+            outline:none;
+
+            background: white;
+            
+            cursor:pointer;
+
+            transition:background .2s, box-shadow .4s;
+        }
+
+        button.led:hover{
+            box-shadow: 1.5vh 1.5vh #0000001f, 0px 0px 1vh #ffffff;
+
+            transition:background .2s, box-shadow .4s;
+        }
+        
+        div.number{
+            line-height: 100%;
+            text-align: center;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                font-weight: 600;
+                font-size: clamp(12px, 4vh, 24px);
+                color:#ffffff7a;
+
+                width:10px;
+                height:10px;
+
+                
+            }
+        }
+    }
+}

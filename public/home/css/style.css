@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins";
+  background: #3CAEA3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+}
+
+body h1 {
+  font-family: "nunito";
+  font-weight: bold;
+  font-size: clamp(16px, 10vh, 40px);
+  color: white;
+  text-shadow: clamp(0px, 1vw, 10px) clamp(0px, 1vw, 10px) #0000002c;
+  text-align: center;
+  margin: 0px 5vw 0px 5vw;
+}
+
+body .button_pannel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  gap: 3vw;
+}
+
+body .button_pannel button {
+  background: none;
+  overflow: hidden;
+  width: clamp(16px, 20vw, 20vh);
+  height: clamp(16px, 20vw, 20vh);
+  border: none;
+  border-radius: clamp(0px, 1.5vw, 20px);
+  -webkit-box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
+          box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
+  cursor: pointer;
+  -webkit-transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, box-shadow .4s, -webkit-box-shadow .4s;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+
+body .button_pannel button img {
+  height: inherit;
+  width: inherit;
+}
+
+body .button_pannel button:hover {
+  -webkit-box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
+          box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-bottom: 3vw;
+  margin-right: 3vw;
+  -webkit-transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+  transition: margin-bottom .4s, margin-right .4s, box-shadow .4s, -webkit-box-shadow .4s;
+}
+/*# sourceMappingURL=style.css.map */

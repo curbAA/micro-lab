@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins";
+
+    background:#3CAEA3;
+
+    display:flex;
+    flex-flow:column wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 100vh;
+    width: 100vw;
+
+    h1{
+        font-family: "nunito";
+        font-weight: bold;
+        font-size: clamp(16px, 10vh, 40px);
+        color:white;
+        text-shadow:clamp(0px, 1vw, 10px) clamp(0px, 1vw, 10px) #0000002c;
+        text-align: center;
+
+        margin:0px 5vw 0px 5vw;
+
+    }
+
+    .button_pannel{
+        display:grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto auto;
+        gap: 3vw;
+
+        // border:1px solid red;
+
+        button{
+            background:none;
+
+            overflow:hidden;
+
+            width:clamp(16px, 20vw, 20vh);
+            height:clamp(16px, 20vw, 20vh);
+
+    
+            border:none;
+            border-radius:clamp(0px, 1.5vw, 20px);
+    
+            box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
+
+            cursor: pointer;
+
+            transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+
+            margin-bottom:0px;
+            margin-right:0px;
+
+            img{
+                height:inherit;
+                width:inherit;
+            }
+    
+        }
+
+        button:hover{
+            box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
+
+            position:sticky;
+
+            margin-bottom:3vw;
+            margin-right:3vw;
+
+            transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+        }
+    }
+}
