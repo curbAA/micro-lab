@@ -45,5 +45,7 @@ body header #btn-back {
   background: url("/public/util/vendor/css/resources/home_btn.svg");
   cursor: pointer;
   outline: none;
+  -webkit-filter: drop-shadow(clamp(7px, 0.5vw, 10px) clamp(7px, 0.5vw, 10px) rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(clamp(7px, 0.5vw, 10px) clamp(7px, 0.5vw, 10px) rgba(0, 0, 0, 0.2));
 }
 /*# sourceMappingURL=style.css.map */

@@ -46,6 +46,8 @@ body{
             
             cursor: pointer;
             outline:none;
+
+            filter: drop-shadow(clamp(7px, .5vw, 10px) clamp(7px, .5vw, 10px) rgba(0, 0, 0, 0.2))
     
             // border:1px solid red;
         }
