@@ -67,8 +67,8 @@
 
         // ───────────────────────────────────── ANCHOR SOCKET IO MODULE SERIAL EVENT ─────
 
-            socket.on("module:serial:event", (serial_data)=>{
-                portSendEvent(serial_data.sender, serial_data.action, serial_data.values);
+            socket.on("module:serial:event", (moduleData)=>{
+                portSendEvent(moduleData.sender, moduleData.action, moduleData.values);
             });
             
     });
@@ -140,8 +140,9 @@
 
     //Here you can add words with "addWord" for quickly indexing
     //new words that you want to test in the microbit    
-    language.addWord("toggle", "tggl");  //action (leds)
-    language.addWord("clear", "cler");   //action (any)
+    language.addWord("toggle", "tggl");         //action (leds)
+    language.addWord("clear", "cler");          //action (any)
+    language.addWord("digitalWrite", "dwrt");   //action (pins)
 
 //
 // ─────────────────────────────── ANCHOR SERIAL PORT EVENT EXPORTER FUNCTION ─────

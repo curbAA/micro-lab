@@ -48,9 +48,13 @@ div.grid-container div.pin-pannel div.switch {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: -webkit-box-align .4s ease-in-out;
+  transition: -webkit-box-align .4s ease-in-out;
+  transition: align-items .4s ease-in-out;
+  transition: align-items .4s ease-in-out, -webkit-box-align .4s ease-in-out, -ms-flex-align .4s ease-in-out;
 }
 
 div.grid-container div.pin-pannel div.switch div.slider {
@@ -77,6 +81,10 @@ div.grid-container div.pin-pannel .pin img {
 
 div.grid-container div.pin-pannel .lightning {
   width: clamp(40px, 20vw, 6vh);
+}
+
+div.grid-container div.pin-pannel #lightning-pin0, div.grid-container div.pin-pannel #lightning-pin1, div.grid-container div.pin-pannel #lightning-pin2 {
+  visibility: hidden;
 }
 
 div.grid-container div.pin-pannel .lock {

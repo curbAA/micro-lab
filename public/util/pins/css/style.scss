@@ -39,7 +39,9 @@ div.grid-container{
             display:flex;
             flex-flow: row nowrap;
             justify-content: center;
-            align-items: flex-end;
+            align-items: flex-start;
+
+            transition: align-items .4s ease-in-out;
 
             div.slider{
                 width:clamp(5px, 2vw, 30px);
@@ -68,6 +70,10 @@ div.grid-container{
 
         .lightning{
             width:clamp(40px,20vw,6vh);
+        }
+
+        #lightning-pin0, #lightning-pin1, #lightning-pin2{
+            visibility: hidden;
         }
 
         .lock{
