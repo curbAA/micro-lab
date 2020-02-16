@@ -16,12 +16,12 @@
     app.use("/home", express.static(_publicDir + "/home"));
     app.use("/public", express.static(_publicDir));
 
-    app.use("/accelerometer", express.static(_publicDir + "/util/accelerometer"));
-    app.use("/buttons", express.static(_publicDir + "/util/buttons"));
-    app.use("/compass", express.static(_publicDir + "/util/compass"));
-    app.use("/leds", express.static(_publicDir + "/util/leds"));
-    app.use("/pins", express.static(_publicDir + "/util/pins"));
-    app.use("/radio", express.static(_publicDir + "/util/radio"));
+    app.use("/accelerometer", express.static(_publicDir + "/modules/accelerometer"));
+    app.use("/buttons", express.static(_publicDir + "/modules/buttons"));
+    app.use("/compass", express.static(_publicDir + "/modules/compass"));
+    app.use("/leds", express.static(_publicDir + "/modules/leds"));
+    app.use("/pins", express.static(_publicDir + "/modules/pins"));
+    app.use("/radio", express.static(_publicDir + "/modules/radio"));
 
 //
 // ─────────────────────────────────────────────────────────────────── ANCHOR SERVER ─────
