@@ -14,26 +14,26 @@ div.page-content{
 
         display:flex;
         flex-flow: row wrap;
-        justify-content: space-evenly;    
-        align-items: center;
+        justify-content: space-between;    
+        align-items: flex-end;
 
-        width:200px;
-        height:200px;
+        width:clamp(0px, 70vw, 400px);
+        height:auto;
 
         div{
             background:#c5c5c5;
 
-            filter:drop-shadow(5px 5px #7e7e7e);
+            filter:drop-shadow(2vw 2vw #7e7e7e);
 
             color:#7e7e7e;
 
-            margin-bottom:5px;
-            margin-right:5px;
+            margin-bottom:2vw;
+            margin-right:2vw;
 
-            border-radius: 10px;
+            border-radius: 2vw;
 
-            height:50px;
-            width:50px;
+            height:clamp(80px, 20vw, 100px);
+            width:clamp(80px, 20vw, 100px);
 
             display:flex;
             flex-flow: row wrap;
@@ -41,20 +41,10 @@ div.page-content{
             align-items: center;
 
             transition:.1s;
-        }
 
-        div:active{
-            background:#dba16a;
-
-            color:#967252;
-
-            margin-bottom: 0px;
-            margin-right: 0px;
-            margin-left: 5px;
-
-            filter:none;
-
-            transition:.1s;
+            span{
+                font-size: clamp(12px, 4vw, 20px);
+            }
         }
     }
 }
