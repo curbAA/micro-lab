@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins";
+    color:white;
+
+    background:#3CAEA3;
+
+    height:100vh;
+
+    overflow: hidden;
+    
+    header{
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-around;
+        align-items: flex-end;
+    
+        // border:1px solid red;
+
+        height:40vh;
+        max-height: 100px;
+    
+        h1{
+            font-family: "nunito";
+            font-size: clamp(16px, 20vh, 50px); //"clamp" makes a changing value (20vh) stay inside certain limits
+            font-weight: bold;
+            text-shadow:10px 10px #0000002c;
+    
+            // border:1px solid red;
+        }
+    
+        #btn-back{
+    
+            width:50px;
+            height:50px;
+    
+            border:none;
+            background:url("/public/modules/_lib/css/resources/home_btn.svg");
+            
+            cursor: pointer;
+            outline:none;
+
+            filter: drop-shadow(clamp(7px, .5vw, 10px) clamp(7px, .5vw, 10px) rgba(0, 0, 0, 0.2))
+    
+            // border:1px solid red;
+        }
+    }
+}
