@@ -229,6 +229,23 @@
             // ─────────────────────────────────────────────────────────────────
 
             case "buttons":
+                switch(action){
+
+                    case "pressed":
+                        io.emit("server:serial:event", {
+                            sender:sender.trim(),
+                            action:action.trim(),
+                            values:values.trim(),
+                        });
+                        break;
+                    case "released":
+                        io.emit("server:serial:event", {
+                            sender:sender.trim(),
+                            action:action.trim(),
+                            values:values.trim(),
+                        });
+                        break;
+                }
                 break;
             // ─────────────────────────────────────────────────────────────────
 
@@ -256,11 +273,11 @@
 //
 
     function portSendEvent(sender, action, values){
-        actual_sender = language.translate(sender);
-        actual_action = language.translate(action);
-        actual_values = values;
+        let translated_sender = language.translate(sender);
+        let translated_action = language.translate(action);
+        let translated_values = values;
 
-        port.write(actual_sender + ":" + actual_action + ":" + actual_values + ";");
+        port.write(translated_sender + ":" + translated_action + ":" + translated_values + ";");
     }
 
 //
