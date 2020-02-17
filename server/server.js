@@ -2,6 +2,8 @@
 // ────────────────────────────────────────────────────── ANCHOR SERVER DEPENDENCIES ─────
 //
 
+    const serverPortID = 3222; // The port that the server executes in
+
     const express = require("express");
     const app = express();
     const http = require("http");
@@ -28,8 +30,8 @@
 //
 
     const server = http.Server(app);
-    server.listen(3222);
-    console.log("Server on port", 3222);
+    server.listen(serverPortID);
+    console.log("Server on port", serverPortID);
 
 //
 // ──────────────────────────────────────────────────────────────── ANCHOR SOCKET IO ─────
@@ -185,42 +187,51 @@
             the micro:bit, never receive them from it.
 
     */
+    
+    const _portID = "COM3"; // Serial Port that's  going to be read
 
-   const SerialPort = require('serialport');
-   const Readline = SerialPort.parsers.Readline;
-   const port = new SerialPort("COM3", {
-       baudRate: 115200,
-       autoOpen: false,
-   });
+    const SerialPort = require('serialport');
+    const Readline = SerialPort.parsers.Readline;
+    const port = new SerialPort(_portID, {
+        baudRate: 115200,
+        autoOpen: false,
+    });
 
-   const parser = new Readline();
-   port.pipe(parser);
+    const parser = new Readline();
+    port.pipe(parser);
 
-   port.open(() => {
-       console.log("< Port open");
-       parser.on('data', (signal) => {
-           let signalProcess = signal.split("!")[0];
-           let signalData = signal.split("!")[1];
-           
-           if(signalProcess == "log"){ //Signal data is console-logged
-               betterConsoleLog("|---| micro:bit |--->", signalData, "orange");
-           } else if (signalProcess == "act"){  //An action occurs based on signal data
-               processSignalData(signalData);
-           }
-       });
-   });
+    port.open(() => {
+        betterConsoleLog("Serial Port Open:", _portID, "orange");
+        parser.on('data', (signal) => {
+            let signalProcess = signal.split("!")[0];
+            let signalData = signal.split("!")[1];
+            
+            if(signalProcess == "log"){ //Signal data is console-logged
+                betterConsoleLog("|---| micro:bit |--->", signalData, "orange");
+            } else if (signalProcess == "act"){  //An action occurs based on signal data
+                processSignalData(signalData);
+            }
+        });
+    });
 
 //
 // ─────────────────────────────────── ANCHOR INCOMING SERIAL EVENT PROCESSOR ─────
 //
 
    function processSignalData(signalData){
+
+        // signalData = "[sender]:[action]:[values];"
        
         let sender = signalData.split(":")[0];
         let action = signalData.split(":")[1];
         let values = signalData.split(":")[2];
 
         // console.log(sender, action, values);
+
+        /*
+            Here you can listen to the actions that come from the microbit depending
+            on wich "sender" sent it. 
+        */
 
         switch(sender){
 
@@ -233,13 +244,18 @@
 
                     case "pressed":
                         io.emit("server:serial:event", {
+
+                            //Remove any unwanted whitespace that the micro:bit might send 
                             sender:sender.trim(),
                             action:action.trim(),
                             values:values.trim(),
                         });
                         break;
+
                     case "released":
                         io.emit("server:serial:event", {
+
+                            //Remove any unwanted whitespace that the micro:bit might send 
                             sender:sender.trim(),
                             action:action.trim(),
                             values:values.trim(),
