@@ -1,5 +1,5 @@
 # micro:lab
-"micro:lab" is a testing tool targeted towards youg students for learning, testing, and developing with the BBC micro:bit. This allows them to input commands from the application to their micro:bit or plot data from the microbit into the aplication. It was designed with the intention of easy and intuitive deployment. 
+"micro:lab" is a testing tool targeted towards young students for learning, testing, and developing with the BBC micro:bit. This allows them to input commands from the application to their micro:bit or plot data from the microbit into the aplication. It was designed with the intention of easy and intuitive deployment/implementation. 
 
 
 
