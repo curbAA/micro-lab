@@ -1,3 +1,8 @@
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#455D8C), to(#89A3D6));
+  background: linear-gradient(#455D8C, #89A3D6);
+}
+
 div.grid-container {
   display: -webkit-box;
   display: -ms-flexbox;

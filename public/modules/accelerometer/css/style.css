@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#934956), to(#D97575));
+  background: linear-gradient(#934956, #D97575);
+}
+/*# sourceMappingURL=style.css.map */

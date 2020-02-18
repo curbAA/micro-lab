@@ -8,7 +8,7 @@
 
 body {
   font-family: "poppins";
-  background: #3CAEA3;
+  background: #2e2e2e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,12 +30,18 @@ body h1 {
   font-weight: bold;
   font-size: clamp(16px, 10vh, 40px);
   color: white;
-  text-shadow: clamp(0px, 1vw, 10px) clamp(0px, 1vw, 10px) #0000002c;
   text-align: center;
+  letter-spacing: 2px;
   margin: 0px 5vw 0px 5vw;
+  border: 6px solid white;
+  border-radius: 100px;
+  background: #373737;
+  -webkit-box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.25);
+          box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.25);
+  padding: 15px 50px;
 }
 
-body .button_pannel {
+body .button-panel {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto auto;
@@ -45,36 +51,34 @@ body .button_pannel {
   gap: 3vw;
 }
 
-body .button_pannel button {
+body .button-panel button {
   background: none;
   overflow: hidden;
   width: clamp(16px, 20vw, 20vh);
   height: clamp(16px, 20vw, 20vh);
   border: none;
-  border-radius: clamp(0px, 1.5vw, 20px);
-  -webkit-box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
-          box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 clamp(0px, 2vw, 20px) #4747479a;
+          box-shadow: 0 clamp(0px, 2vw, 20px) #4747479a;
   cursor: pointer;
   -webkit-transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
   transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
   transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
   transition: margin-bottom .4s, margin-right .4s, box-shadow .4s, -webkit-box-shadow .4s;
   margin-bottom: 0px;
-  margin-right: 0px;
 }
 
-body .button_pannel button img {
+body .button-panel button img {
   height: inherit;
   width: inherit;
 }
 
-body .button_pannel button:hover {
-  -webkit-box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
-          box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
+body .button-panel button:hover {
+  -webkit-box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
+          box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
   position: -webkit-sticky;
   position: sticky;
   margin-bottom: 3vw;
-  margin-right: 3vw;
   -webkit-transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
   transition: margin-bottom .4s, margin-right .4s, -webkit-box-shadow .4s;
   transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;

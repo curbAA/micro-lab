@@ -9,7 +9,7 @@
 body{
     font-family: "poppins";
 
-    background:#3CAEA3;
+    background:#2e2e2e;
 
     display:flex;
     flex-flow:column wrap;
@@ -24,14 +24,22 @@ body{
         font-weight: bold;
         font-size: clamp(16px, 10vh, 40px);
         color:white;
-        text-shadow:clamp(0px, 1vw, 10px) clamp(0px, 1vw, 10px) #0000002c;
         text-align: center;
+        letter-spacing: 2px;
 
         margin:0px 5vw 0px 5vw;
 
+        border:6px solid white;
+        border-radius:100px;
+
+        background:#373737;
+        box-shadow:0px 0px 200px rgba(255, 255, 255, 0.25);
+
+        padding:15px 50px;
+
     }
 
-    .button_pannel{
+    .button-panel{
         display:grid;
         grid-template-rows: auto auto;
         grid-template-columns: auto auto auto;
@@ -49,16 +57,15 @@ body{
 
     
             border:none;
-            border-radius:clamp(0px, 1.5vw, 20px);
+            border-radius:30px;
     
-            box-shadow: clamp(0px, 2vw, 20px) clamp(0px, 2vw, 20px) #0000002c;
+            box-shadow: 0 clamp(0px, 2vw, 20px) #4747479a;
 
             cursor: pointer;
 
             transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
 
             margin-bottom:0px;
-            margin-right:0px;
 
             img{
                 height:inherit;
@@ -68,12 +75,11 @@ body{
         }
 
         button:hover{
-            box-shadow: clamp(0px, 4vw, 40px) clamp(0px, 4vw, 40px) #0000002c;
+            box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
 
             position:sticky;
 
             margin-bottom:3vw;
-            margin-right:3vw;
 
             transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
         }
