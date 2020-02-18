@@ -1,4 +1,10 @@
 //
+// ─────────────────────────────────────────────────────── ANCHOR PATH MODULE ─────
+//
+
+    const path = require("path");
+
+//
 // ────────────────────────────────────────────────────── ANCHOR SERVER DEPENDENCIES ─────
 //
 
@@ -13,7 +19,7 @@
 // ──────────────────────────────────────────────────────────────── ANCHOR LOCATIONS ─────
 //
 
-    const _publicDir = "C:/Users/prost/Desktop/Programación/Node/microbit/microlab/public";
+    const _publicDir = path.join(__dirname, "/../public");
 
     app.use("/home", express.static(_publicDir + "/home"));
     app.use("/public", express.static(_publicDir));
@@ -31,7 +37,7 @@
 
     const server = http.Server(app);
     server.listen(serverPortID);
-    console.log("Server on port", serverPortID);
+    betterConsoleLog("| server |", "on port "+ serverPortID, "yellow");
 
 //
 // ──────────────────────────────────────────────────────────────── ANCHOR SOCKET IO ─────
