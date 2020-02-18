@@ -29,7 +29,9 @@ body header {
           align-items: center;
   background: #2e2e2e;
   height: clamp(0px, 20vw, 110px);
-  width: clamp(0px, 300vw, 400px);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   border-right: 10px solid white;
   border-bottom: 10px solid white;
   border-bottom-right-radius: 100px;
