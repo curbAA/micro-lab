@@ -17,36 +17,54 @@ body{
     
     header{
         display:flex;
-        flex-flow:row wrap;
+        flex-flow:row nowrap;
         justify-content: space-around;
-        align-items: flex-end;
+        align-items: center;
+
+        background:#2e2e2e;
     
         // border:1px solid red;
 
-        height:40vh;
-        max-height: 100px;
+        height:clamp(0px, 20vw, 110px);
+        width:clamp(0px, 300vw, 400px);
+
+        border-right:10px solid white;
+        border-bottom:10px solid white;
+        border-bottom-right-radius: 100px;
+
+        filter: drop-shadow(-15px 15px 0px #0000002f);
     
         h1{
+            margin:0 100px 0 40px;
+
             font-family: "nunito";
-            font-size: clamp(16px, 20vh, 50px); //"clamp" makes a changing value (20vh) stay inside certain limits
+            font-size: clamp(16px, 5vh, 35px); //"clamp" makes a changing value (20vh) stay inside certain limits
             font-weight: bold;
-            text-shadow:10px 10px #0000002c;
-    
+            text-shadow: -7px 7px 0px #00000065;
             // border:1px solid red;
+        }
+
+        .divider-line{
+            background: rgba(255, 255, 255, 0.219);
+            height:60%;
+            width:2px;
         }
     
         #btn-back{
+            margin:0 20px;
     
             width:50px;
             height:50px;
-    
+
             border:none;
+
             background:url("/public/modules/_lib/css/resources/home_btn.svg");
+            background-size:cover;
+
+            filter:drop-shadow(-6px 6px 0px #00000065);
             
             cursor: pointer;
             outline:none;
-
-            filter: drop-shadow(clamp(7px, .5vw, 10px) clamp(7px, .5vw, 10px) rgba(0, 0, 0, 0.2))
     
             // border:1px solid red;
         }

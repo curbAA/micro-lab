@@ -1,111 +1,146 @@
+// Imports
+
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
+// Positioning
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-
-    font-family: "poppins";
-
-    background:#2e2e2e;
-
+body {
     height: 100vh;
     width: 100vw;
 
-    overflow: hidden;
+    .version-tag {
+        position: relative;
 
-    .version-tag{
-        position:relative;
-
-        width:100%;
-        height:fit-content;
-        // border:1px solid red;
-
-        padding:10px;
-
-        color:#ffffff42;
-        font-family: "consolas";
-
-        
+        width: 100%;
+        height: fit-content;
     }
 
-    .page-content{
-        display:flex;
-        flex-flow:column wrap;
+    .page-content {
+        display: flex;
+        flex-flow: column wrap;
         align-items: center;
         justify-content: space-around;
 
+        height: 100%;
+        width: 100%;
+
+        h1 {
+            margin: 0px 5vw 0px 5vw;
+        }
+
+        .button-panel {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-template-columns: auto auto auto;
+            gap: 4vw;
+
+            button {
+                width: clamp(16px, 20vw, 20vh);
+                height: clamp(16px, 20vw, 20vh);
+
+                margin-bottom: 0px;
+
+                transform:translateY(0px);
+                transition: .4s;
+
+                img {
+                    height: inherit;
+                    width: inherit;
+                }
+
+                .dropup-content{
+                    transform:translateY(-20px);
+                    transition:transform .4s;
+                }
+
+                img:hover + .dropup-content{
+                    transform:translateY(0px);
+                    transition:transform .4s;
+                }
+
+            }
+
+            button:hover {
+                position: relative;
+
+                transition:transform .4s;
+                transform:translateY(-20px);
+            }
+        }
+    }
+}
+
+// Apereance
+
+body {
+    font-family: "montserrat";
+
+    background: #2e2e2e;
+
+    overflow: hidden;
+
+    .version-tag {
         // border:1px solid red;
 
-        height:100%;
-        width:100%;
+        padding: 10px;
 
-        h1{
+        color: #ffffff42;
+        font-family: "consolas";
+
+    }
+
+    .page-content {
+        // border:1px solid red;
+
+        h1 {
             font-family: "nunito";
             font-weight: bold;
             font-size: clamp(16px, 10vh, 40px);
-            color:white;
+            color: white;
             text-align: center;
             letter-spacing: 2px;
 
-            margin:0px 5vw 0px 5vw;
+            border: 6px solid white;
+            border-radius: 100px;
 
-            border:6px solid white;
-            border-radius:100px;
+            background: #373737;
+            box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.25);
 
-            background:#373737;
-            box-shadow:0px 0px 200px rgba(255, 255, 255, 0.25);
-
-            padding:15px 50px;
+            padding: 15px 50px;
 
         }
 
-        .button-panel{
-            display:grid;
-            grid-template-rows: auto auto;
-            grid-template-columns: auto auto auto;
-            gap: 3vw;
-
+        .button-panel {
             // border:1px solid red;
 
-            button{
-                background:none;
+            button {
+                background: none;
 
-                overflow:hidden;
-
-                width:clamp(16px, 20vw, 20vh);
-                height:clamp(16px, 20vw, 20vh);
-
-        
-                border:none;
-                border-radius:30px;
-        
-                box-shadow: 0 clamp(0px, 2vw, 20px) #4747479a;
+                border: none;
+                border-radius: 30px;
 
                 cursor: pointer;
 
-                transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+                outline:none;
 
-                margin-bottom:0px;
-
-                img{
-                    height:inherit;
-                    width:inherit;
+                .dropup-content{
+                    font-family: "montserrat";
+                    text-align: center;
+                    font-weight: 700;
                 }
-        
-            }
 
-            button:hover{
-                box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
-
-                position:sticky;
-
-                margin-bottom:3vw;
-
-                transition: margin-bottom .4s, margin-right .4s, box-shadow .4s;
+                .dropup-content.accelerometer{color:#E88E72;}
+                .dropup-content.buttons{color:#E5B66F;}
+                .dropup-content.compass{color:#DAF277;}
+                .dropup-content.leds{color:#86D989;}
+                .dropup-content.pins{color:#9BEFF4;}
+                .dropup-content.radio{color:#B5B4F5;}
             }
         }
     }

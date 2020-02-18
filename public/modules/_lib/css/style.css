@@ -20,32 +20,47 @@ body header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 40vh;
-  max-height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2e2e2e;
+  height: clamp(0px, 20vw, 110px);
+  width: clamp(0px, 300vw, 400px);
+  border-right: 10px solid white;
+  border-bottom: 10px solid white;
+  border-bottom-right-radius: 100px;
+  -webkit-filter: drop-shadow(-15px 15px 0px #0000002f);
+          filter: drop-shadow(-15px 15px 0px #0000002f);
 }
 
 body header h1 {
+  margin: 0 100px 0 40px;
   font-family: "nunito";
-  font-size: clamp(16px, 20vh, 50px);
+  font-size: clamp(16px, 5vh, 35px);
   font-weight: bold;
-  text-shadow: 10px 10px #0000002c;
+  text-shadow: -7px 7px 0px #00000065;
+}
+
+body header .divider-line {
+  background: rgba(255, 255, 255, 0.219);
+  height: 60%;
+  width: 2px;
 }
 
 body header #btn-back {
+  margin: 0 20px;
   width: 50px;
   height: 50px;
   border: none;
   background: url("/public/modules/_lib/css/resources/home_btn.svg");
+  background-size: cover;
+  -webkit-filter: drop-shadow(-6px 6px 0px #00000065);
+          filter: drop-shadow(-6px 6px 0px #00000065);
   cursor: pointer;
   outline: none;
-  -webkit-filter: drop-shadow(clamp(7px, 0.5vw, 10px) clamp(7px, 0.5vw, 10px) rgba(0, 0, 0, 0.2));
-          filter: drop-shadow(clamp(7px, 0.5vw, 10px) clamp(7px, 0.5vw, 10px) rgba(0, 0, 0, 0.2));
 }
 /*# sourceMappingURL=style.css.map */
