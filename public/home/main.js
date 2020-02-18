@@ -25,6 +25,6 @@
     const _name = "home";
 
     socket.on("connect",()=>{
-        socket.emit("home:connection:server");
+        socket.emit("module:connection:server", _name);
     });
 

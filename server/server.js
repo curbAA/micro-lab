@@ -49,27 +49,19 @@
     var current_page; 
 
     io.on("connection", (socket)=>{
-        
-        // ─────────────────────────────────── ANCHOR SOCKETIO HOME-SERVER CONNECTION ─────
-
-            socket.on("home:connection:server", ()=>{
-                current_page = "home";
-                console.log("Current Page:", current_page);
-                portSendEvent("home", "connection", "0");
-            });
 
         // ──────────────────────────────── ANCHOR SOCKET IO MODULE-SERVER CONNECTION ─────
 
             socket.on("module:connection:server", (module_data)=>{
                 current_page = module_data;
-                console.log("Current Page:", current_page);
+                betterConsoleLog("| server | +++ Connection", current_page, "yellow");
                 portSendEvent(current_page, "connection", "0");
             });
         
         // ────────────────────────────── ANCHOR SOCKET IO CURRENT PAGE DISCONNECTION ─────     
 
             socket.on("disconnect", ()=>{
-                console.log("Disconnected:", current_page);
+                betterConsoleLog("| server | --- Disconnection", current_page, "yellow");
                 portSendEvent(current_page, "disconnection", "0");
             });
 
@@ -194,11 +186,11 @@
 
     */
     
-    const _portID = "COM3"; // Serial Port that's  going to be read
+    const serialPortID = "COM3"; // Serial Port that's  going to be read
 
     const SerialPort = require('serialport');
     const Readline = SerialPort.parsers.Readline;
-    const port = new SerialPort(_portID, {
+    const port = new SerialPort(serialPortID, {
         baudRate: 115200,
         autoOpen: false,
     });
@@ -207,13 +199,13 @@
     port.pipe(parser);
 
     port.open(() => {
-        betterConsoleLog("Serial Port Open:", _portID, "orange");
+        betterConsoleLog("Serial Port Open:", serialPortID + "\n", "orange");
         parser.on('data', (signal) => {
             let signalProcess = signal.split("!")[0];
             let signalData = signal.split("!")[1];
             
             if(signalProcess == "log"){ //Signal data is console-logged
-                betterConsoleLog("|---| micro:bit |--->", signalData, "orange");
+                betterConsoleLog("|---| micro:bit |--->", signalData + "\n", "orange");
             } else if (signalProcess == "act"){  //An action occurs based on signal data
                 processSignalData(signalData);
             }
