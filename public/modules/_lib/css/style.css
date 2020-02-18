@@ -7,11 +7,8 @@
 }
 
 body {
-  font-family: "poppins";
-  color: white;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 
 body header {
@@ -27,28 +24,17 @@ body header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #2e2e2e;
   height: clamp(0px, 20vw, 110px);
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  border-right: 10px solid white;
-  border-bottom: 10px solid white;
-  border-bottom-right-radius: 100px;
-  -webkit-filter: drop-shadow(-15px 15px 0px #0000002f);
-          filter: drop-shadow(-15px 15px 0px #0000002f);
 }
 
 body header h1 {
   margin: 0 100px 0 40px;
-  font-family: "nunito";
-  font-size: clamp(16px, 5vh, 35px);
-  font-weight: bold;
-  text-shadow: -7px 7px 0px #00000065;
 }
 
 body header .divider-line {
-  background: rgba(255, 255, 255, 0.219);
   height: 60%;
   width: 2px;
 }
@@ -57,6 +43,35 @@ body header #btn-back {
   margin: 0 20px;
   width: 50px;
   height: 50px;
+}
+
+body {
+  font-family: "poppins";
+  color: white;
+  overflow: hidden;
+}
+
+body header {
+  background: #2e2e2e;
+  border-right: 10px solid white;
+  border-bottom: 10px solid white;
+  border-bottom-right-radius: 100px;
+  -webkit-filter: drop-shadow(-15px 15px 0px #0000002f);
+          filter: drop-shadow(-15px 15px 0px #0000002f);
+}
+
+body header h1 {
+  font-family: "nunito";
+  font-size: clamp(16px, 5vh, 35px);
+  font-weight: bold;
+  text-shadow: -7px 7px 0px #00000065;
+}
+
+body header .divider-line {
+  background: rgba(255, 255, 255, 0.219);
+}
+
+body header #btn-back {
   border: none;
   background: url("/public/modules/_lib/css/resources/home_btn.svg");
   background-size: cover;
