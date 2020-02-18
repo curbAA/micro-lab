@@ -9,6 +9,23 @@
 body {
   font-family: "poppins";
   background: #2e2e2e;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body .version-tag {
+  position: relative;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  color: #ffffff42;
+  font-family: "consolas";
+}
+
+body .page-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,11 +38,11 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
-body h1 {
+body .page-content h1 {
   font-family: "nunito";
   font-weight: bold;
   font-size: clamp(16px, 10vh, 40px);
@@ -41,7 +58,7 @@ body h1 {
   padding: 15px 50px;
 }
 
-body .button-panel {
+body .page-content .button-panel {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto auto;
@@ -51,7 +68,7 @@ body .button-panel {
   gap: 3vw;
 }
 
-body .button-panel button {
+body .page-content .button-panel button {
   background: none;
   overflow: hidden;
   width: clamp(16px, 20vw, 20vh);
@@ -68,12 +85,12 @@ body .button-panel button {
   margin-bottom: 0px;
 }
 
-body .button-panel button img {
+body .page-content .button-panel button img {
   height: inherit;
   width: inherit;
 }
 
-body .button-panel button:hover {
+body .page-content .button-panel button:hover {
   -webkit-box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
           box-shadow: 0 clamp(0px, 4vw, 40px) #4747479a;
   position: -webkit-sticky;
