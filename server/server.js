@@ -31,6 +31,8 @@
     app.use("/pins", express.static(_publicDir + "/modules/pins"));
     app.use("/radio", express.static(_publicDir + "/modules/radio"));
 
+    app.use("/node_modules", express.static(_publicDir + "/../node_modules"));
+
 //
 // ─────────────────────────────────────────────────────────────────── ANCHOR SERVER ─────
 //
