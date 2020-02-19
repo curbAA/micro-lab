@@ -1,9 +1,55 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
+
+    body{
+        .page-content{
+            border:1px solid orange;
+
+            width:100vw;
+            height:90%;
+
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            .chart-container{
+
+                height:fit-content;
+                width:clamp(0px, 40vw, 350px);
+            }
+
+            .model3D-container{
+                width:500px;
+                height: 500px;
+            }
+        }
+    }
+    
+
+
 // Appearence --------------------------------------------------------------
 
     body{
         background:linear-gradient(#934956, #D97575);
 
         overflow:scroll;
+
+        .page-content{
+            
+            .chart-container{
+
+                background:#2e2e2e48;
+
+                padding:30px;
+
+                border-radius:30px;
+            }
+
+            .model3D-container{
+                background:#2e2e2e48;
+
+                border-radius:30px;
+            }
+        }
     }
