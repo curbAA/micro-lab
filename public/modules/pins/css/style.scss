@@ -1,32 +1,73 @@
-body{
-    background:linear-gradient(#455D8C, #89A3D6);
-}
+// Imports --------------------------------------------------------------
+// Positioning --------------------------------------------------------------
+
+    div.grid-container{
+        display:flex;
+        flex-flow:row wrap;
+
+        justify-content: center;
+        align-items: center;
+
+        height:85vh;
+        width:100vw;
+
+        div.pin.pannel{ 
+            display:grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto auto auto;
+
+            align-items: center;
+            justify-items: center;
+        
+            width:clamp(400px, 50vw, 700px);
+            height:clamp(100px, 70vw, 60vh);
+
+            div.switch{
+                height:clamp(60px, 16vw, 12vh);
+                width:clamp(30px, 8vw, 6vh);
+
+                display:flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: flex-start;
+
+                div.slider{
+                    width:clamp(5px, 2vw, 30px);
+                    height: clamp(5px, 2vw, 30px);
+                    margin:25%;
+                }
+            }
+
+            .pin{
+                width:clamp(50px, 10vw, 10vh);
+    
+                img{
+                    width:inherit;
+                    height:inherit;
+                }
+            }
+
+                
+            .lightning{
+                width:clamp(40px,20vw,6vh);
+            }
+
+            .lock{
+                width:clamp(25px,20vw, 6vh);
+            }
+        }
+    }
+
+// Appearence --------------------------------------------------------------
+
+    body{
+        background:linear-gradient(#455D8C, #89A3D6);
+    }
 
 div.grid-container{
-    display:flex;
-    flex-flow:row wrap;
-
-    justify-content: center;
-    align-items: center;
-
-    height:85vh;
-    width:100vw;
-
     // border:1px solid red; 
 
     div.pin-pannel{
-        // border:1px solid red;
-    
-        display:grid;
-        grid-template-columns: auto auto auto auto auto;
-        grid-template-rows: auto auto auto;
-
-        align-items: center;
-        justify-items: center;
-    
-        width:clamp(400px, 50vw, 700px);
-        height:clamp(100px, 70vw, 60vh);
-
         // border:1px solid red;
 
         div.switch{
@@ -35,23 +76,11 @@ div.grid-container{
             border: clamp(.5vh, .5vw, 20px) solid white;
             border-radius: 200px;
 
-            height:clamp(60px, 16vw, 12vh);
-            width:clamp(30px, 8vw, 6vh);
-
             cursor:pointer;
-
-            display:flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: flex-start;
 
             transition: align-items .4s ease-in-out;
 
             div.slider{
-                width:clamp(5px, 2vw, 30px);
-                height: clamp(5px, 2vw, 30px);
-                margin:25%;
-
                 border-radius:200px;
 
                 background: white;
@@ -63,25 +92,8 @@ div.grid-container{
             filter: drop-shadow(clamp(10px, 1vw, 12px) clamp(10px, 1vw, 12px) rgba(0, 0, 0, 0.2));
         }
 
-        .pin{
-            width:clamp(50px, 10vw, 10vh);
-
-            img{
-                width:inherit;
-                height:inherit;
-            }
-        }
-
-        .lightning{
-            width:clamp(40px,20vw,6vh);
-        }
-
         #lightning-pin0, #lightning-pin1, #lightning-pin2{
             visibility: hidden;
-        }
-
-        .lock{
-            width:clamp(25px,20vw, 6vh);
         }
     }
 }
