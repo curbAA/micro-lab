@@ -15,9 +15,9 @@
 
 - **If you don't have Git installed:** simply download a zip file to the directory you created and uncompress it with Winrar or something like that.
 
-- **Get your micro:bit** and plug it into your computer - you'll have to flash the `".hex"` file from the `"microbit files"` into your micro:bit for this to work.  
+- **Get your micro:bit** and plug it into your computer - you'll have to flash the `".hex"` file from the `"microbit files"` into your micro:bit for this to work.
 
-That's all there is for the installation.
+- Open a terminal in the directory you installed micro:lab and run `npm install` for installing all the dependencies.
 
 
 
