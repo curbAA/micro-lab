@@ -67,6 +67,9 @@ Setting the channel, sending a value, string, etc, and listenig to them when rec
 ### Pins
 - Bein able to toggle any of the 3 main IO pins (0, 1, 2) individually and in real time.
 
+### Accelerometer
+- Real time acceleration data plotting from micro:bit's accelerometer sensors
+
 
 
 ## Versioning
