@@ -3,8 +3,6 @@
 
     body{
         .page-content{
-            border:1px solid orange;
-
             width:100vw;
             height:90%;
 
@@ -13,10 +11,23 @@
             justify-content: space-around;
             align-items: center;
 
-            .chart-container{
+            .chart-table{
+                display:flex;
+                flex-flow:column nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                height:85%;
+                width:clamp(0px, 30vw, 350px);
 
-                height:fit-content;
-                width:clamp(0px, 40vw, 350px);
+                .chart-container{
+                    width:230px;
+
+                    .chart-title{
+                        width:100%;
+                        margin-bottom:10px;
+                    }
+                }
             }
 
             .model3D-container{
@@ -37,13 +48,42 @@
 
         .page-content{
             
-            .chart-container{
-
-                background:#2e2e2e48;
-
+            .chart-table{
                 padding:30px;
 
                 border-radius:30px;
+
+                .chart-container{
+                    overflow:hidden;
+
+                    border-radius:20px;
+
+                    background:#2e2e2e4f;
+                    
+                    .chart-title{
+                        text-align: center;
+                    }
+
+                    .chart{
+                        padding:5px
+                    }
+                }
+
+                .chart-container.x-axis{
+                    .chart-title{
+                        background-color: #e6606b;
+                    }
+                }
+                .chart-container.y-axis{
+                    .chart-title{
+                        background-color: #6b77e0;
+                    }
+                }
+                .chart-container.z-axis{
+                    .chart-title{
+                        background-color: #54ad79;
+                    }
+                }
             }
 
             .model3D-container{
