@@ -1,7 +1,89 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
+
+    body{
+        .page-content{
+            width:100vw;
+            height:90%;
+
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            .chart-table{
+                display:flex;
+                flex-flow:column nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                height:85%;
+                width:clamp(0px, 40vw, 350px);
+
+                .chart-container{
+                    width:clamp(0px, 80%, 200px);
+
+                    .chart-title{
+                        width:100%;
+                        margin-bottom:10px;
+                    }
+                }
+            }
+        }
+    }
+    
+
+
 // Appearence --------------------------------------------------------------
 
     body{
         background:linear-gradient(#934956, #D97575);
+
+        .page-content{
+            
+            .chart-table{
+                
+                .chart-container{
+                    overflow:hidden;
+                    
+                    background:#2e2e2e4f;
+
+                    border-radius:20px;
+                    
+                    .chart-title{
+                        text-align: center;
+                    }
+
+                    .chart{
+                        padding:14px;
+                    }
+
+                    .chart-current-value{
+                        text-align:center;
+                        font-size: 12px;
+                        font-family: "montserrat";
+
+                        width:100%;
+
+                        margin-bottom:12px;
+                    }
+                }
+
+                .chart-container.x-axis{
+                    .chart-title{
+                        background-color: #e6606b;
+                    }
+                }
+                .chart-container.y-axis{
+                    .chart-title{
+                        background-color: #54ad79;
+                    }
+                }
+                .chart-container.z-axis{
+                    .chart-title{
+                        background-color: #6b77e0;
+                    }
+                }
+            }
+        }
     }

@@ -1,8 +1,3 @@
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#455D8C), to(#89A3D6));
-  background: linear-gradient(#455D8C, #89A3D6);
-}
-
 div.grid-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,7 +16,7 @@ div.grid-container {
   width: 100vw;
 }
 
-div.grid-container div.pin-pannel {
+div.grid-container div.pin.pannel {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto auto auto;
@@ -36,13 +31,9 @@ div.grid-container div.pin-pannel {
   height: clamp(100px, 70vw, 60vh);
 }
 
-div.grid-container div.pin-pannel div.switch {
-  background: none;
-  border: clamp(0.5vh, 0.5vw, 20px) solid white;
-  border-radius: 200px;
+div.grid-container div.pin.pannel div.switch {
   height: clamp(60px, 16vw, 12vh);
   width: clamp(30px, 8vw, 6vh);
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,6 +47,41 @@ div.grid-container div.pin-pannel div.switch {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+div.grid-container div.pin.pannel div.switch div.slider {
+  width: clamp(5px, 2vw, 30px);
+  height: clamp(5px, 2vw, 30px);
+  margin: 25%;
+}
+
+div.grid-container div.pin.pannel .pin {
+  width: clamp(50px, 10vw, 10vh);
+}
+
+div.grid-container div.pin.pannel .pin img {
+  width: inherit;
+  height: inherit;
+}
+
+div.grid-container div.pin.pannel .lightning {
+  width: clamp(40px, 20vw, 6vh);
+}
+
+div.grid-container div.pin.pannel .lock {
+  width: clamp(25px, 20vw, 6vh);
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#455D8C), to(#89A3D6));
+  background: linear-gradient(#455D8C, #89A3D6);
+}
+
+div.grid-container div.pin-pannel div.switch {
+  background: none;
+  border: clamp(0.5vh, 0.5vw, 20px) solid white;
+  border-radius: 200px;
+  cursor: pointer;
   -webkit-transition: -webkit-box-align .4s ease-in-out;
   transition: -webkit-box-align .4s ease-in-out;
   transition: align-items .4s ease-in-out;
@@ -63,9 +89,6 @@ div.grid-container div.pin-pannel div.switch {
 }
 
 div.grid-container div.pin-pannel div.switch div.slider {
-  width: clamp(5px, 2vw, 30px);
-  height: clamp(5px, 2vw, 30px);
-  margin: 25%;
   border-radius: 200px;
   background: white;
 }
@@ -75,24 +98,7 @@ div.grid-container div.pin-pannel .switch, div.grid-container div.pin-pannel .lo
           filter: drop-shadow(clamp(10px, 1vw, 12px) clamp(10px, 1vw, 12px) rgba(0, 0, 0, 0.2));
 }
 
-div.grid-container div.pin-pannel .pin {
-  width: clamp(50px, 10vw, 10vh);
-}
-
-div.grid-container div.pin-pannel .pin img {
-  width: inherit;
-  height: inherit;
-}
-
-div.grid-container div.pin-pannel .lightning {
-  width: clamp(40px, 20vw, 6vh);
-}
-
 div.grid-container div.pin-pannel #lightning-pin0, div.grid-container div.pin-pannel #lightning-pin1, div.grid-container div.pin-pannel #lightning-pin2 {
   visibility: hidden;
-}
-
-div.grid-container div.pin-pannel .lock {
-  width: clamp(25px, 20vw, 6vh);
 }
 /*# sourceMappingURL=style.css.map */
