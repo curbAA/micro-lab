@@ -20,9 +20,13 @@
 
 - Open a terminal in the directory you installed micro:lab and run `npm install` for installing all the dependencies.
 
+- **Last, but not least, you will have to check in your machine in what port your micro:bit is connected** for Windows 10, you will have to open up "device manager" from the start menu, go to "ports (COM & LPT)" and checkout if you have like "COM3", "COM5", or something like that in there. Whatever it says, remember the port, open up your text editor, go to the micro:lab directory, go to "server" and open up "server.js", when you are in there, search for the variable "serialPortID" and change it to the value you got from the "device manager". 
+
 
 
 ## Deployment
+- Before running this, make sure you don't have any programs, like MakeCode, that read serial ports, becouse they will negate micro:lab access to those ports.
+
 - For running micro:lab in your computer, you'll have to open up a terminal and go to the directory where you installed micro:lab and run `npm start`. This will start an express server in your local network in the port `3222` by default.
 
 - Open up your web navigator of choice and type `"localhost:3222/home"` in the navigation bar - now you have your application running in your local network.
