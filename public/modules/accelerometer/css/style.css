@@ -8,8 +8,9 @@ body .page-content {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -30,11 +31,11 @@ body .page-content .chart-table {
       -ms-flex-align: center;
           align-items: center;
   height: 85%;
-  width: clamp(0px, 30vw, 350px);
+  width: clamp(0px, 40vw, 350px);
 }
 
 body .page-content .chart-table .chart-container {
-  width: 230px;
+  width: clamp(0px, 80%, 200px);
 }
 
 body .page-content .chart-table .chart-container .chart-title {
@@ -42,26 +43,15 @@ body .page-content .chart-table .chart-container .chart-title {
   margin-bottom: 10px;
 }
 
-body .page-content .model3D-container {
-  width: 500px;
-  height: 500px;
-}
-
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#934956), to(#D97575));
   background: linear-gradient(#934956, #D97575);
-  overflow: scroll;
-}
-
-body .page-content .chart-table {
-  padding: 30px;
-  border-radius: 30px;
 }
 
 body .page-content .chart-table .chart-container {
   overflow: hidden;
-  border-radius: 20px;
   background: #2e2e2e4f;
+  border-radius: 20px;
 }
 
 body .page-content .chart-table .chart-container .chart-title {
@@ -69,7 +59,15 @@ body .page-content .chart-table .chart-container .chart-title {
 }
 
 body .page-content .chart-table .chart-container .chart {
-  padding: 5px;
+  padding: 14px;
+}
+
+body .page-content .chart-table .chart-container .chart-current-value {
+  text-align: center;
+  font-size: 12px;
+  font-family: "montserrat";
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 body .page-content .chart-table .chart-container.x-axis .chart-title {
@@ -77,15 +75,10 @@ body .page-content .chart-table .chart-container.x-axis .chart-title {
 }
 
 body .page-content .chart-table .chart-container.y-axis .chart-title {
-  background-color: #6b77e0;
-}
-
-body .page-content .chart-table .chart-container.z-axis .chart-title {
   background-color: #54ad79;
 }
 
-body .page-content .model3D-container {
-  background: #2e2e2e48;
-  border-radius: 30px;
+body .page-content .chart-table .chart-container.z-axis .chart-title {
+  background-color: #6b77e0;
 }
 /*# sourceMappingURL=style.css.map */

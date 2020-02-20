@@ -79,6 +79,7 @@
                 },
                 ticks:{
                     beginAtZero: false,
+                    display:false,
                 }
             }]
         }
@@ -125,8 +126,8 @@
             data: {
                 datasets: [{
                     label: "Y",
-                    backgroundColor: "rgba(100, 50, 255, 0.2)",
-                    borderColor: "rgba(100, 50, 255, 0.7)",
+                    backgroundColor: "rgba(50, 255, 100, 0.2)",
+                    borderColor: "rgba(50, 255, 100, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
@@ -144,8 +145,8 @@
             data: {
                 datasets: [{
                     label: "Z",
-                    backgroundColor: "rgba(50, 255, 100, 0.2)",
-                    borderColor: "rgba(50, 255, 100, 0.7)",
+                    backgroundColor: "rgba(100, 50, 255, 0.2)",
+                    borderColor: "rgba(100, 50, 255, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
@@ -170,6 +171,10 @@
                 chart.data.labels.shift();
                 chart.data.labels.push(index);
             }
+
+            if (chart == x_chart) document.querySelector(".chart-container.x-axis .chart-current-value").innerHTML = value;
+            if (chart == y_chart) document.querySelector(".chart-container.y-axis .chart-current-value").innerHTML = value;
+            if (chart == z_chart) document.querySelector(".chart-container.z-axis .chart-current-value").innerHTML = value;
 
             chart.update();
         }

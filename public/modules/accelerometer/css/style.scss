@@ -8,7 +8,7 @@
 
             display:flex;
             flex-flow:row wrap;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-items: center;
 
             .chart-table{
@@ -18,21 +18,16 @@
                 align-items: center;
                 
                 height:85%;
-                width:clamp(0px, 30vw, 350px);
+                width:clamp(0px, 40vw, 350px);
 
                 .chart-container{
-                    width:230px;
+                    width:clamp(0px, 80%, 200px);
 
                     .chart-title{
                         width:100%;
                         margin-bottom:10px;
                     }
                 }
-            }
-
-            .model3D-container{
-                width:500px;
-                height: 500px;
             }
         }
     }
@@ -44,28 +39,33 @@
     body{
         background:linear-gradient(#934956, #D97575);
 
-        overflow:scroll;
-
         .page-content{
             
             .chart-table{
-                padding:30px;
-
-                border-radius:30px;
-
+                
                 .chart-container{
                     overflow:hidden;
+                    
+                    background:#2e2e2e4f;
 
                     border-radius:20px;
-
-                    background:#2e2e2e4f;
                     
                     .chart-title{
                         text-align: center;
                     }
 
                     .chart{
-                        padding:5px
+                        padding:14px;
+                    }
+
+                    .chart-current-value{
+                        text-align:center;
+                        font-size: 12px;
+                        font-family: "montserrat";
+
+                        width:100%;
+
+                        margin-bottom:12px;
                     }
                 }
 
@@ -76,20 +76,14 @@
                 }
                 .chart-container.y-axis{
                     .chart-title{
-                        background-color: #6b77e0;
+                        background-color: #54ad79;
                     }
                 }
                 .chart-container.z-axis{
                     .chart-title{
-                        background-color: #54ad79;
+                        background-color: #6b77e0;
                     }
                 }
-            }
-
-            .model3D-container{
-                background:#2e2e2e48;
-
-                border-radius:30px;
             }
         }
     }
