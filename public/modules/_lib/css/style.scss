@@ -24,19 +24,20 @@
             max-width: fit-content;
 
             h1{
-                margin:0 100px 0 40px;
+                margin:0 3em 0 0;
             }
-
+            
             .divider-line{
+                margin:0em 2em;
                 height:60%;
-                width:2px;
+                width:clamp(0px, 1vw, 5px);
             }
 
             #btn-back{
-                margin:0 20px;
+                margin:0 0 0 2em;
         
-                width:50px;
-                height:50px;
+                width:clamp(20px, 10vw, 50px);
+                height:clamp(20px, 10vw, 50px);
             }
         }
     }
@@ -63,7 +64,7 @@
             h1{
 
                 font-family: "nunito";
-                font-size: clamp(16px, 5vh, 35px); //"clamp" makes a changing value (20vh) stay inside certain limits
+                font-size: clamp(20px, 5vw, 40px); //"clamp" makes a changing value (20vh) stay inside certain limits
                 font-weight: bold;
                 text-shadow: -7px 7px 0px #00000065;
                 // border:1px solid red;
