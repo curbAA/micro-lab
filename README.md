@@ -7,6 +7,7 @@
 ### Prequisities
 - [Node.JS](https://nodejs.org/es/)
 - A BBC micro:bit
+- Microsoft MakeCode (Recomended for this application customization)
 - Winrar or any `".zip"` file uncompressor (Unnecesary for Windows 10 users)
 ### Installing
 - First of all, create a directory in your machine and name it whatever you like, this is where you will download this repository.
@@ -26,12 +27,12 @@
 
 - Open up your web navigator of choice and type `"localhost:3222/home"` in the navigation bar - now you have your application running in your local network.
 
-
-
 ## What's happening
-Basically, this is an aplication that allows you to plot data from the micr:obit sensors(such as acceleration, magnetic orientation, and such), and put it to display in your machine. You can also, from your computer, send data and actions to the micro:bit, like a remote control. You can digitally toggle the IO pins in the microbit, or toggle a specific led on its screen, for example.
+Basically, this is an aplication that allows you to plot data from the micro:bit's sensors (acceleration, magnetic orientation, and such), and put it to display in your machine. You can also, from your computer, send data and actions to the micro:bit, like a remote control. You can digitally toggle the IO pins in the microbit, or toggle a specific led on its screen, for example.
 
-This allows you to make tests in real time with your micro:bit, without to having to code it every time. Allowing for more interactive classroom experiences with the micro:bit, 
+This allows you to make tests in real time with your micro:bit, without to having to code it every time. Allowing for more interactive classroom experiences with the micro:bit.
+
+
 
 
 
