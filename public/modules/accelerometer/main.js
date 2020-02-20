@@ -9,6 +9,35 @@
         socket.emit("module:connection:server", _name);
     });
 
+    socket.on("server:serial:event", (signal)=>{
+        if (signal.sender == _name){
+            switch (signal.action){
+                case "plotData":
+                    let targetChart = signal.values.split(",")[0];
+                    let targetIndex = signal.values.split(",")[1];
+                    let targetValue = signal.values.split(",")[2];
+
+                    // console.log(targetChart, targetIndex, targetValue);
+
+                    switch (targetChart){
+                        case "x":
+                            chartPlotData(x_chart, targetValue, targetIndex, maximum_data_values);
+                            break;
+
+                        case "y":
+                            chartPlotData(y_chart, targetValue, targetIndex, maximum_data_values);
+                            break;
+
+                        case "z":
+                            chartPlotData(z_chart, targetValue, targetIndex, maximum_data_values);
+                            break;
+                    }
+
+                    break;
+            }
+        }
+    });
+
 //
 // ────────────────────────────────────────────────────────── ANCHOR CHART JS ─────
 //
@@ -56,6 +85,7 @@
     };
 
     var default_chart_type = "line";
+    var maximum_data_values = 10;
     var default_chart_data = {
         labels:["0", "1", "2", "3", "4", "5"],
         datasets:{
@@ -127,7 +157,6 @@
     //
 
         function chartPlotData(chart, value, index, limit){
-            console.log(chart.data.datasets[0].data.length);
 
             if(chart.data.datasets[0].data.length < limit){
 
@@ -145,20 +174,20 @@
             chart.update();
         }
 
-        chartPlotData(x_chart, 2000, "0", 4);
-        chartPlotData(x_chart, 100, "1", 4);
-        chartPlotData(x_chart, -1500, "2", 4);
-        chartPlotData(x_chart, -1500, "3", 4);
+        // chartPlotData(x_chart, 2000, "0", 4);
+        // chartPlotData(x_chart, 100, "1", 4);
+        // chartPlotData(x_chart, -1500, "2", 4);
+        // chartPlotData(x_chart, -1500, "3", 4);
 
-        chartPlotData(y_chart, 2000, "0", 4);
-        chartPlotData(y_chart, 100, "1", 4);
-        chartPlotData(y_chart, -1500, "2", 4);
-        chartPlotData(y_chart, -1500, "3", 4);
+        // chartPlotData(y_chart, 2000, "0", 4);
+        // chartPlotData(y_chart, 100, "1", 4);
+        // chartPlotData(y_chart, -1500, "2", 4);
+        // chartPlotData(y_chart, -1500, "3", 4);
 
-        chartPlotData(z_chart, 2000, "0", 4);
-        chartPlotData(z_chart, 100, "1", 4);
-        chartPlotData(z_chart, -1500, "2", 4);
-        chartPlotData(z_chart, -1500, "3", 4);
+        // chartPlotData(z_chart, 2000, "0", 4);
+        // chartPlotData(z_chart, 100, "1", 4);
+        // chartPlotData(z_chart, -1500, "2", 4);
+        // chartPlotData(z_chart, -1500, "3", 4);
         
 
         

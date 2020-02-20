@@ -124,6 +124,7 @@
     language.addWord("toggle", "tggl");         //action (leds)
     language.addWord("clear", "cler");          //action (any)
     language.addWord("digitalWrite", "dwrt");   //action (pins)
+    language.addWord("plotData", "pdta");       //action (accelerometer)
 
 //
 // ────────────────────────────────────────────────────────────── ANCHOR SERIAL PORT ─────
@@ -236,6 +237,15 @@
         switch(sender){
 
             case "accelerometer":
+                switch (action){
+                    case "plotData":
+                        io.emit("server:serial:event", {
+                            sender:sender.trim(),
+                            action:action.trim(),
+                            values:values.trim(),
+                        });
+                        break;
+                }
                 break;
             // ─────────────────────────────────────────────────────────────────
 
