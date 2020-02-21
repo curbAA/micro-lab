@@ -31,6 +31,14 @@
 
 - Open up your web navigator of choice and type `"localhost:3222/home"` in the navigation bar - now you have your application running in your local network.
 
+## Common problems
+If you aren't receiving any data from the micro:bit when executing the aplication, this could be:
+- You are not using the correct `"serialPortID"` (change it in the `"server.js"` file)
+- You have another program opened that uses serial port readings (like MakeCode, for example)
+- You don't have your micro:bit plugged in correctly (try other USB port)
+- You touched too much your micro:bit without conscent and now it's mad at you...yes, really. For some reason when you touch the electronic components behind the micro:bit with your fingers, this can cause it to **completely** stop sending and receiving data from the serial port (just restart the node server in your terminal with `"rs"`, if it doesn't work, reset both the micro:bit and the server)
+
+
 ## What's happening
 Basically, this is an aplication that allows you to plot data from the micro:bit's sensors (acceleration, magnetic orientation, and such), and put it to display in your machine. You can also, from your computer, send data and actions to the micro:bit, like a remote control. You can digitally toggle the IO pins in the microbit, or toggle a specific led on its screen, for example.
 
@@ -41,22 +49,22 @@ This allows you to make tests in real time with your micro:bit, without to havin
 
 
 ## General Objectives
-### Accelerometer
+#### Accelerometer
 Being able to represent the data of the accelerometer of the micro:bit in both: a graph, and a 3d visual representation of the micro:bit being tilted **in real time.**
 
-### Buttons
+#### Buttons
 Being able to make the micro:bit do something stated in the page beforehand when you press a button (having a menu that lets you pick what you want the micro:bit to do when you press a button, like, show an icon or a string in the screen).
 
-### Compass
+#### Compass
 Being able to represent the data of the magnetometer of the micro:bit in both: a graph, and a 3d visual representation of the micro:bit being rotated in a magnetic field **in real time.**
 
-### Leds
+#### Leds
 Being able to show a string or an icon in the microbit, stated by the user.
 
-### Pins
+#### Pins
 Have the capabilities of both reading and writing (digitally and analogically) values from and to the micro:bit IO Pins.
 
-### Radio
+#### Radio
 Setting the channel, sending a value, string, etc, and listenig to them when received, all remotely based on user input.
 
 
@@ -68,10 +76,10 @@ Setting the channel, sending a value, string, etc, and listenig to them when rec
 #### Leds
 - Real time LED toggling in the micro:bit built in screen.
 
-### Pins
+#### Pins
 - Bein able to toggle any of the 3 main IO pins (0, 1, 2) individually and in real time.
 
-### Accelerometer
+#### Accelerometer
 - Real time acceleration data plotting from micro:bit's accelerometer sensors
 
 
