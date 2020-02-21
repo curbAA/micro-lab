@@ -96,6 +96,8 @@ body .page-content .button-panel button:hover {
 body {
   font-family: "montserrat";
   background: #2e2e2e;
+  -webkit-transition: background .1s;
+  transition: background .1s;
   overflow: hidden;
 }
 
