@@ -6,7 +6,7 @@
     const _name = "accelerometer";
 
     socket.on("connect", () =>{
-        socket.emit("module:connection:server", _name);
+        socket.emit("module:connection:server", _name); //! Paused
     });
 
     socket.on("server:serial:event", (signal)=>{
@@ -21,15 +21,15 @@
 
                     switch (targetChart){
                         case "x":
-                            chartPlotData(x_chart, targetValue, targetIndex, maximum_data_values);
+                            chartPlotData(x_chart, targetValue, targetIndex, default_maximum_data_values);
                             break;
 
                         case "y":
-                            chartPlotData(y_chart, targetValue, targetIndex, maximum_data_values);
+                            chartPlotData(y_chart, targetValue, targetIndex, default_maximum_data_values);
                             break;
 
                         case "z":
-                            chartPlotData(z_chart, targetValue, targetIndex, maximum_data_values);
+                            chartPlotData(z_chart, targetValue, targetIndex, default_maximum_data_values);
                             break;
                     }
 
@@ -44,9 +44,11 @@
 
     Chart.defaults.global.defaultFontColor = 'rgba(255,255,255,0.5)';
     Chart.defaults.global.defaultFontFamily = 'montserrat';
-    Chart.defaults.global.defaultFontSize = 10;
+    Chart.defaults.global.defaultFontSize = 12;
 
-    var options = {
+    var default_chart_options = {
+
+        aspectRatio:2.5,
 
         legend:{
             display:false,
@@ -86,7 +88,7 @@
     };
 
     var default_chart_type = "line";
-    var maximum_data_values = 10;
+    var default_maximum_data_values = 10;
     var default_chart_data = {
         labels:["0", "1", "2", "3", "4", "5"],
         datasets:{
@@ -107,12 +109,12 @@
             data: {
                 datasets: [{
                     label: "X",
-                    backgroundColor: "rgba(255, 50, 100, 0.2)",
-                    borderColor: "rgba(255, 50, 100, 0.7)",
+                    backgroundColor: "rgba(255, 100, 150, 0.2)",
+                    borderColor: "rgba(255, 150, 150, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
         
 
@@ -126,12 +128,12 @@
             data: {
                 datasets: [{
                     label: "Y",
-                    backgroundColor: "rgba(50, 255, 100, 0.2)",
-                    borderColor: "rgba(50, 255, 100, 0.7)",
+                    backgroundColor: "rgba(100, 255, 150, 0.2)",
+                    borderColor: "rgba(100, 255, 150, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
         
         
@@ -145,12 +147,12 @@
             data: {
                 datasets: [{
                     label: "Z",
-                    backgroundColor: "rgba(100, 50, 255, 0.2)",
-                    borderColor: "rgba(100, 50, 255, 0.7)",
+                    backgroundColor: "rgba(100, 150, 255, 0.2)",
+                    borderColor: "rgba(100, 150, 255, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
 
     //
@@ -172,9 +174,9 @@
                 chart.data.labels.push(index);
             }
 
-            if (chart == x_chart) document.querySelector(".chart-container.x-axis .chart-current-value").innerHTML = value;
-            if (chart == y_chart) document.querySelector(".chart-container.y-axis .chart-current-value").innerHTML = value;
-            if (chart == z_chart) document.querySelector(".chart-container.z-axis .chart-current-value").innerHTML = value;
+            if (chart == x_chart) document.querySelector(".chart-box.x-axis .chart-current-value").innerHTML = value;
+            if (chart == y_chart) document.querySelector(".chart-box.y-axis .chart-current-value").innerHTML = value;
+            if (chart == z_chart) document.querySelector(".chart-box.z-axis .chart-current-value").innerHTML = value;
 
             chart.update();
         }

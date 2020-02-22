@@ -36,8 +36,8 @@
             #btn-back{
                 margin:0 0 0 2em;
         
-                width:clamp(20px, 10vw, 50px);
-                height:clamp(20px, 10vw, 50px);
+                width:clamp(5vh, 5vw, 50px);
+                height:clamp(5vh, 5vw, 50px);
             }
         }
     }
@@ -55,8 +55,8 @@
         
             // border:1px solid red;
 
-            border-right:10px solid white;
-            border-bottom:10px solid white;
+            border-right:1vh solid white;
+            border-bottom:1vh solid white;
             border-bottom-right-radius: 100px;
 
             filter: drop-shadow(-15px 15px 0px #0000002f);
