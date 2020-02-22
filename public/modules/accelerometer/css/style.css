@@ -6,8 +6,8 @@ body .page-content {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -17,30 +17,43 @@ body .page-content {
 }
 
 body .page-content .chart-table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: "auto";
+      grid-template-columns: "auto";
+  -ms-grid-rows: "auto auto auto";
+      grid-template-rows: "auto auto auto";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 85%;
-  width: clamp(0px, 40vw, 350px);
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
+  row-gap: 1vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100vw;
 }
 
-body .page-content .chart-table .chart-container {
-  width: clamp(0px, 80%, 200px);
+body .page-content .chart-table .chart-box {
+  width: clamp(250px, 30vw, 400px);
 }
 
-body .page-content .chart-table .chart-container .chart-title {
+body .page-content .chart-table .chart-box .chart-title {
   width: 100%;
   margin-bottom: 10px;
+}
+
+body .page-content .chart-table .chart-box .chart {
+  width: 70%;
+}
+
+body .page-content .chart-table .chart-box .chart-current-value {
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 body {
@@ -48,37 +61,52 @@ body {
   background: linear-gradient(#934956, #D97575);
 }
 
-body .page-content .chart-table .chart-container {
+body .page-content .chart-table .chart-box {
   overflow: hidden;
-  background: #2e2e2e4f;
+  background: #2e2e2e67;
   border-radius: 20px;
 }
 
-body .page-content .chart-table .chart-container .chart-title {
+body .page-content .chart-table .chart-box .chart-title {
   text-align: center;
 }
 
-body .page-content .chart-table .chart-container .chart {
-  padding: 14px;
+body .page-content .chart-table .chart-box .chart-container {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
 }
 
-body .page-content .chart-table .chart-container .chart-current-value {
+body .page-content .chart-table .chart-box .chart-current-value {
   text-align: center;
   font-size: 12px;
   font-family: "montserrat";
-  width: 100%;
-  margin-bottom: 12px;
 }
 
-body .page-content .chart-table .chart-container.x-axis .chart-title {
+body .page-content .chart-table .chart-box.x-axis .chart-title {
   background-color: #e6606b;
 }
 
-body .page-content .chart-table .chart-container.y-axis .chart-title {
+body .page-content .chart-table .chart-box.x-axis .chart-current-value {
+  color: #dd9ba0;
+  font-weight: bold;
+}
+
+body .page-content .chart-table .chart-box.y-axis .chart-title {
   background-color: #54ad79;
 }
 
-body .page-content .chart-table .chart-container.z-axis .chart-title {
+body .page-content .chart-table .chart-box.y-axis .chart-current-value {
+  color: #8dcca7;
+  font-weight: bold;
+}
+
+body .page-content .chart-table .chart-box.z-axis .chart-title {
   background-color: #6b77e0;
+}
+
+body .page-content .chart-table .chart-box.z-axis .chart-current-value {
+  color: #a0a6da;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

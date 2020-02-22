@@ -2,30 +2,49 @@
 // Positioning --------------------------------------------------------------
 
     body{
+        // overflow:scroll;
         .page-content{
             width:100vw;
             height:90%;
 
             display:flex;
-            flex-flow:row wrap;
+            flex-flow:row nowrap;
             justify-content: flex-start;
             align-items: center;
 
             .chart-table{
-                display:flex;
-                flex-flow:column nowrap;
-                justify-content: space-evenly;
+                display:grid;
+                grid-template-columns: "auto";
+                grid-template-rows: "auto auto auto";
+                justify-content: center;
                 align-items: center;
+                column-gap:2vw;
+                row-gap: 1vh;
                 
-                height:85%;
-                width:clamp(0px, 40vw, 350px);
+                height:fit-content;
+                width:100vw;
 
-                .chart-container{
-                    width:clamp(0px, 80%, 200px);
+                // border:1px solid red;
+
+                .chart-box{
+                    width:clamp(250px,30vw,400px);
+
+                    // border:1px solid red; 
 
                     .chart-title{
                         width:100%;
                         margin-bottom:10px;
+                    }
+
+
+                    .chart{
+                        width:70%;
+                    }
+
+                    .chart-current-value{
+                        width:100%;
+
+                        margin-bottom:12px;
                     }
                 }
             }
@@ -43,10 +62,10 @@
             
             .chart-table{
                 
-                .chart-container{
+                .chart-box{
                     overflow:hidden;
                     
-                    background:#2e2e2e4f;
+                    background:#2e2e2e67;
 
                     border-radius:20px;
                     
@@ -54,34 +73,47 @@
                         text-align: center;
                     }
 
-                    .chart{
-                        padding:14px;
+                    .chart-container{
+                        padding-top:10px;
+                        padding-left:10px;
+                        padding-right:20px;
                     }
 
                     .chart-current-value{
                         text-align:center;
                         font-size: 12px;
                         font-family: "montserrat";
-
-                        width:100%;
-
-                        margin-bottom:12px;
                     }
                 }
 
-                .chart-container.x-axis{
+                .chart-box.x-axis{
                     .chart-title{
                         background-color: #e6606b;
                     }
+
+                    .chart-current-value{
+                        color:#dd9ba0;
+                        font-weight:bold;
+                    }
                 }
-                .chart-container.y-axis{
+                .chart-box.y-axis{
                     .chart-title{
                         background-color: #54ad79;
                     }
+
+                    .chart-current-value{
+                        color:#8dcca7;
+                        font-weight:bold;
+                    }
                 }
-                .chart-container.z-axis{
+                .chart-box.z-axis{
                     .chart-title{
                         background-color: #6b77e0;
+                    }
+
+                    .chart-current-value{
+                        color:#a0a6da;
+                        font-weight:bold;
                     }
                 }
             }

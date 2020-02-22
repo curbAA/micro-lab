@@ -15,7 +15,7 @@ body {
     width: 100vw;
 
     .version-tag {
-        position: relative;
+        position: absolute;
 
         width: 100%;
         height: fit-content;
@@ -25,7 +25,7 @@ body {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
         height: 100%;
         width: 100%;
@@ -38,16 +38,16 @@ body {
             display: grid;
             grid-template-rows: auto auto;
             grid-template-columns: auto auto auto;
-            gap: 4vw;
+            gap: clamp(0px, 4vw, 30px);
 
             button {
-                width: clamp(16px, 20vw, 20vh);
-                height: clamp(16px, 20vw, 20vh);
+                width: clamp(200px, 20vw, 300px);
+                height: clamp(200px, 20vw, 300px);
 
                 margin-bottom: 0px;
 
                 transform:translateY(0px);
-                transition: .4s;
+                transition:transform .4s ease-in-out;
 
                 img {
                     height: inherit;
@@ -56,21 +56,18 @@ body {
 
                 .dropup-content{
                     transform:translateY(-20px);
-                    transition:transform .4s;
+                    transition:transform .4s ease-in-out, visibility .4s ease-in-out;
                 }
-
-                img:hover + .dropup-content{
-                    transform:translateY(0px);
-                    transition:transform .4s;
-                }
-
             }
 
             button:hover {
                 position: relative;
-
-                transition:transform .4s;
                 transform:translateY(-20px);
+
+                .dropup-content{
+                    transform:translateY(0px);
+                    transition:transform .4s ease-in-out;
+                }
             }
         }
     }
@@ -133,6 +130,9 @@ body {
                     font-family: "montserrat";
                     text-align: center;
                     font-weight: 700;
+                    font-size:2vh;
+
+                    visibility: hidden;
                 }
 
                 .dropup-content.accelerometer{color:#E88E72;}
@@ -141,6 +141,12 @@ body {
                 .dropup-content.leds{color:#86D989;}
                 .dropup-content.pins{color:#9BEFF4;}
                 .dropup-content.radio{color:#B5B4F5;}
+            }
+
+            button:hover{
+                .dropup-content{
+                    visibility: visible;
+                }
             }
         }
     }
