@@ -82,6 +82,9 @@ Setting the channel, sending a value, string, etc, and listenig to them when rec
 #### Accelerometer
 - Real time acceleration data plotting from micro:bit's accelerometer sensors
 
+### Compass
+- Real time compass orientation data visualization from the micro:bit
+
 
 
 ## Versioning
