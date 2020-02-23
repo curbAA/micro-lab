@@ -71,6 +71,15 @@ body {
             }
         }
     }
+
+    .background-transition{
+        position:absolute;
+        width:100vw;
+        height:100vh;
+
+        transform: translateY(0vh);
+        transition: transform .4s ease-in-out;
+    }
 }
 
 // ANCHOR Appearance ------------------------------------------------------------------------------------

@@ -20,35 +20,33 @@ function changeHomeView(button_panel, button_list, view){
     }
 }
 
+function homeBackgroundPageTransition(background){
+    let background_transition = document.querySelector(".background-transition");
+
+    background_transition.style.background = background;
+    background_transition.style.transform = "translateY(-100vh)";
+}
+
 //
-// ─────────────────────────────────────────── ANCHOR WAIT FOR WINDOW LOADING ─────
+// ────────────────────────────── ANCHOR SWITCH BETWEEN NARROW AND WIDE VIEWS ─────
 //
 
-    window.addEventListener("load", ()=>{
+    let button_panel = document.querySelector(".button-panel");
+    let button_list = document.querySelectorAll(".button");
 
-        //
-        // ────────────────────────────── ANCHOR SWITCH BETWEEN NARROW AND WIDE VIEWS ─────
-        //
+    if (window.innerWidth <= 650){
+        changeHomeView(button_panel, button_list, "narrow");
+        
+    } else {
+        changeHomeView(button_panel, button_list, "wide");
+    }
 
-            let button_panel = document.querySelector(".button-panel");
-            let button_list = document.querySelectorAll(".button");
-
-            console.log(button_panel, button_list);
-
-            if (window.innerWidth <= 650){
-                changeHomeView(button_panel, button_list, "narrow");
-                
-            } else {
-                changeHomeView(button_panel, button_list, "wide");
-            }
-
-            window.addEventListener("resize", ()=>{
-                if (window.innerWidth <= 650){
-                    changeHomeView(button_panel, button_list, "narrow");
-                    
-                } else {
-                    changeHomeView(button_panel, button_list, "wide");
-                }
-            });
+    window.addEventListener("resize", ()=>{
+        if (window.innerWidth <= 650){
+            changeHomeView(button_panel, button_list, "narrow");
+            
+        } else {
+            changeHomeView(button_panel, button_list, "wide");
+        }
     });
 

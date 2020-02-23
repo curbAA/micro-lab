@@ -81,4 +81,8 @@ body header #btn-back {
   cursor: pointer;
   outline: none;
 }
+
+body .background-transition {
+  background: #2e2e2e;
+}
 /*# sourceMappingURL=style.css.map */

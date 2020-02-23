@@ -92,6 +92,18 @@ body .page-content .button-panel button:hover .dropup-content {
   transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
+body .background-transition {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
 body {
   font-family: "montserrat";
   background: #2e2e2e;

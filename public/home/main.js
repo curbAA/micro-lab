@@ -10,12 +10,30 @@
     const btn_radio = document.querySelector("#btn-radio");
     
 
-    btn_accelerometer.addEventListener("click", ()=>{window.location.pathname = "/accelerometer/";});
-    btn_buttons.addEventListener("click", ()=>{window.location.pathname = "/buttons/";});
-    btn_compass.addEventListener("click", ()=>{window.location.pathname = "/compass/";});
-    btn_leds.addEventListener("click", ()=>{window.location.pathname = "/leds/";});
-    btn_pins.addEventListener("click", ()=>{window.location.pathname = "/pins/";});
-    btn_radio.addEventListener("click", ()=>{window.location.pathname = "/radio/";});
+    btn_accelerometer.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#934956, #D97575)");
+        window.location.pathname = "/accelerometer/";
+    });
+    btn_buttons.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#B65C40, #CF976E)");
+        window.location.pathname = "/buttons/";
+    });
+    btn_compass.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#B08E36, #EEE596)");
+        window.location.pathname = "/compass/";
+    });
+    btn_leds.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#6C9346, #91CF94)");
+        window.location.pathname = "/leds/";
+    });
+    btn_pins.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#455D8C, #89A3D6)");
+        window.location.pathname = "/pins/";
+    });
+    btn_radio.addEventListener("click", ()=>{
+        homeBackgroundPageTransition("linear-gradient(#6B5DA3, #B38ABD)");
+        window.location.pathname = "/radio/";
+    });
 
 //
 // ───────────────────────────────────────────────────────── ANCHOR SOCKET IO ─────

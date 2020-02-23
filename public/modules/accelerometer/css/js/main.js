@@ -1,8 +1,9 @@
-window.addEventListener("load", ()=>{
+//
+// ─────────────────────────────────────────────── ANCHOR PAGE RESPONSIVENESS ─────
+//
+    
     var chart_table = document.querySelector(".chart-table");
     var chart_box = document.querySelectorAll(".chart-box");
-
-    console.log("window loaded!");
 
     if (window.innerWidth < 850){
         chart_table.style.gridTemplateColumns = "auto";
@@ -21,4 +22,3 @@ window.addEventListener("load", ()=>{
             chart_table.style.gridTemplateRows = "auto";
         }
     });
-});
