@@ -1,3 +1,89 @@
+body .page-content {
+  width: 100%;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .page-content .compass-box-container {
+  background: #c4944c;
+  width: clamp(200px, 70vw, 50vh);
+  height: clamp(200px, 70vw, 50vh);
+  border-radius: 500px;
+  padding: 20px;
+  -webkit-box-shadow: -10px 10px #2e2e2e18;
+          box-shadow: -10px 10px #2e2e2e18;
+}
+
+body .page-content .compass-box-container .compass-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+body .page-content .compass-box-container .compass-box .compass {
+  position: relative;
+  background: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .page-content .compass-box-container .compass-box .compass img {
+  width: inherit;
+  height: inherit;
+}
+
+body .page-content .compass-box-container .compass-box .compass .arrow {
+  position: absolute;
+  height: clamp(50px, 100vw, 150px);
+  width: clamp(25px, 100vw, 50px);
+  -webkit-transition: -webkit-transform 0.09s;
+  transition: -webkit-transform 0.09s;
+  transition: transform 0.09s;
+  transition: transform 0.09s, -webkit-transform 0.09s;
+}
+
+body .page-content .compass-box-container .compass-box .compass .arrow img {
+  width: inherit;
+  height: inherit;
+}
+
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#B08E36), to(#EEE596));
   background: linear-gradient(#B08E36, #EEE596);

@@ -276,6 +276,15 @@
             // ─────────────────────────────────────────────────────────────────
 
             case "compass":
+                switch(action){
+                    case "plotData":
+                        io.emit("server:serial:event", {
+                            sender:sender.trim(),
+                            action:action.trim(),
+                            values:values.trim(),
+                        });
+                        break;
+                }
                 break;
             // ─────────────────────────────────────────────────────────────────
 

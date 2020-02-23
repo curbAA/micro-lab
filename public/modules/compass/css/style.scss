@@ -1,5 +1,74 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
+
+    body{
+        .page-content{
+            width:100%;
+            height:75vh;
+
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: center;
+            align-items: center;
+            
+            .compass-box-container{
+                background:#c4944c;
+
+                width:clamp(200px, 70vw, 50vh);
+                height:clamp(200px, 70vw, 50vh);
+
+                border-radius: 500px;
+
+                padding:20px;
+
+                box-shadow:-10px 10px #2e2e2e18;
+                
+                .compass-box{
+                    display:flex;
+                    flex-flow:row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    width:100%;
+                    height:100%;
+                    
+                    .compass{
+                        position:relative;
+
+                        background:none;
+                        width:100%;
+                        height:100%;
+                        
+                        display:flex;
+                        flex-flow:row wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        img{
+                            width:inherit;
+                            height:inherit;
+
+                        }
+
+                        .arrow{
+                            position:absolute;
+
+                            height:clamp(50px, 100vw, 150px);
+                            width:clamp(25px, 100vw, 50px);
+
+                            transition:transform 0.09s;
+
+                            img{
+                                width:inherit;
+                                height:inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 // Appearence --------------------------------------------------------------
 
     body{
