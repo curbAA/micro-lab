@@ -14,6 +14,18 @@
         height:100vh;
         width:100vw;
 
+        overflow: scroll;
+
+        .background-transition{
+            z-index:10;
+
+            position:absolute;
+            width:100vw;
+            height:100vh;
+            transform:translateY(-100vh);
+            transition: transform .4s;
+        }
+
         header{
             display:flex;
             flex-flow:row nowrap;
@@ -66,7 +78,6 @@
                 font-family: "nunito";
                 font-size: clamp(20px, 5vw, 40px); //"clamp" makes a changing value (20vh) stay inside certain limits
                 font-weight: bold;
-                text-shadow: -7px 7px 0px #00000065;
                 // border:1px solid red;
             }
 
@@ -79,8 +90,6 @@
 
                 background:url("/public/modules/_lib/css/resources/home_btn.svg");
                 background-size:cover;
-
-                filter:drop-shadow(-6px 6px 0px #00000065);
                 
                 cursor: pointer;
                 outline:none;

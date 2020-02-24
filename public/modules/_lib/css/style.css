@@ -9,6 +9,20 @@
 body {
   height: 100vh;
   width: 100vw;
+  overflow: scroll;
+}
+
+body .background-transition {
+  z-index: 10;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
 }
 
 body header {
@@ -65,7 +79,6 @@ body header h1 {
   font-family: "nunito";
   font-size: clamp(20px, 5vw, 40px);
   font-weight: bold;
-  text-shadow: -7px 7px 0px #00000065;
 }
 
 body header .divider-line {
@@ -76,8 +89,6 @@ body header #btn-back {
   border: none;
   background: url("/public/modules/_lib/css/resources/home_btn.svg");
   background-size: cover;
-  -webkit-filter: drop-shadow(-6px 6px 0px #00000065);
-          filter: drop-shadow(-6px 6px 0px #00000065);
   cursor: pointer;
   outline: none;
 }
