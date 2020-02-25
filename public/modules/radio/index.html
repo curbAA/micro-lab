@@ -21,6 +21,31 @@
         <span class="divider-line"></span>
         <h1>Radio</h1>
     </header>
+
+    <div class="page-content">
+        <div class="set-group-container">
+            <p>Change Group</p>
+            <div class="user-inputs">
+                <input type="number" class="set-group-input" id="set_group_input">
+                <button class="set-group-button" id="set_group_button">OK</button>
+            </div>
+        </div>
+
+        <div class="send-string-container">
+            <p>Send String</p>
+            <div class="user-inputs">
+                <input type="text" class="send-string-input" id="send_string_input">
+                <button class="send-string-button" id="send_string_button">OK</button>
+            </div>
+        </div>
+
+        <div class="received-strings-container">
+            <p>Received Strings</p>
+            <div class="received-strings">
+                <p class="string"></p>
+            </div>
+        </div>
+    </div>
     
     <!-- MAIN JAVASCRIPT FILES -->
     <script src="/socket.io/socket.io.js"></script>

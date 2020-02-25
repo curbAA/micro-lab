@@ -70,6 +70,7 @@
         // ───────────────────────────────────── ANCHOR SOCKET IO MODULE SERIAL EVENT ─────
 
             socket.on("module:serial:event", (moduleData)=>{
+                betterConsoleLog("| server | --- Module Serial Event", moduleData.sender+":"+moduleData.action+":"+moduleData.values, "yellow");
                 portSendEvent(moduleData.sender, moduleData.action, moduleData.values);
             });
             
@@ -121,10 +122,13 @@
     //Here you can add words with "language.addWord()" for quickly indexing
     //new words that you want to send to the microbit in the microbit.
     //Be sure that they are added as well (in the same way) in the microbit 
+
     language.addWord("toggle", "tggl");         //action (leds)
-    language.addWord("clear", "cler");          //action (any)
+    language.addWord("clear", "cler");          //action (leds or any)
     language.addWord("digitalWrite", "dwrt");   //action (pins)
-    language.addWord("plotData", "pdta");       //action (accelerometer)
+    language.addWord("plotData", "pdta");       //action (accelerometer or compass)
+    language.addWord("setGroup", "sgrp");       //action (radio)
+    language.addWord("sendString", "sstr");     //action (radio)
 
 //
 // ────────────────────────────────────────────────────────────── ANCHOR SERIAL PORT ─────
@@ -202,13 +206,15 @@
     port.pipe(parser);
 
     port.open(() => {
-        betterConsoleLog("Serial Port Open:", serialPortID + "\n", "orange");
+        betterConsoleLog("Using Serial Port:", serialPortID + "\n", "orange");
+
         parser.on('data', (signal) => {
             let signalProcess = signal.split("!")[0];
             let signalData = signal.split("!")[1];
             
             if(signalProcess == "log"){ //Signal data is console-logged
                 betterConsoleLog("|---| micro:bit |--->", signalData + "\n", "orange");
+
             } else if (signalProcess == "act"){  //An action occurs based on signal data
                 processSignalData(signalData);
             }
@@ -221,85 +227,19 @@
 
    function processSignalData(signalData){
 
-        // signalData = "[sender]:[action]:[values];"
+        // signalData = "sender:action:values;"
        
-        let sender = signalData.split(":")[0];
-        let action = signalData.split(":")[1];
-        let values = signalData.split(":")[2];
+        let sender = signalData.split(":")[0].trim();
+        let action = signalData.split(":")[1].trim();
+        let values = signalData.split(":")[2].trim();
 
         // console.log(sender, action, values);
 
-        /*
-            Here you can listen to the actions that come from the microbit depending
-            on wich "sender" sent it. 
-        */
-
-        switch(sender){
-
-            case "accelerometer":
-                switch (action){
-                    case "plotData":
-                        io.emit("server:serial:event", {
-                            sender:sender.trim(),
-                            action:action.trim(),
-                            values:values.trim(),
-                        });
-                        break;
-                }
-                break;
-            // ─────────────────────────────────────────────────────────────────
-
-            case "buttons":
-                switch(action){
-
-                    case "pressed":
-                        io.emit("server:serial:event", {
-
-                            //Remove any unwanted whitespace that the micro:bit might send 
-                            sender:sender.trim(),
-                            action:action.trim(),
-                            values:values.trim(),
-                        });
-                        break;
-
-                    case "released":
-                        io.emit("server:serial:event", {
-
-                            //Remove any unwanted whitespace that the micro:bit might send 
-                            sender:sender.trim(),
-                            action:action.trim(),
-                            values:values.trim(),
-                        });
-                        break;
-                }
-                break;
-            // ─────────────────────────────────────────────────────────────────
-
-            case "compass":
-                switch(action){
-                    case "plotData":
-                        io.emit("server:serial:event", {
-                            sender:sender.trim(),
-                            action:action.trim(),
-                            values:values.trim(),
-                        });
-                        break;
-                }
-                break;
-            // ─────────────────────────────────────────────────────────────────
-
-            case "leds":
-                break;
-            // ─────────────────────────────────────────────────────────────────
-
-            case "pins":
-                break;
-            // ─────────────────────────────────────────────────────────────────
-
-            case "radio":
-                break;
-            // ─────────────────────────────────────────────────────────────────
-        }
+       io.emit("server:serial:event", {
+            sender:sender,
+            action:action,
+            values:values,
+        });
 
    }
 

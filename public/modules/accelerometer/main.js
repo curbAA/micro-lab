@@ -180,21 +180,6 @@
 
             chart.update();
         }
-
-        // chartPlotData(x_chart, 2000, "0", 4);
-        // chartPlotData(x_chart, 100, "1", 4);
-        // chartPlotData(x_chart, -1500, "2", 4);
-        // chartPlotData(x_chart, -1500, "3", 4);
-
-        // chartPlotData(y_chart, 2000, "0", 4);
-        // chartPlotData(y_chart, 100, "1", 4);
-        // chartPlotData(y_chart, -1500, "2", 4);
-        // chartPlotData(y_chart, -1500, "3", 4);
-
-        // chartPlotData(z_chart, 2000, "0", 4);
-        // chartPlotData(z_chart, 100, "1", 4);
-        // chartPlotData(z_chart, -1500, "2", 4);
-        // chartPlotData(z_chart, -1500, "3", 4);
         
 
         
