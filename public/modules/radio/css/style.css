@@ -1,5 +1,159 @@
 body {
+  overflow: scroll;
+}
+
+body .page-content {
+  height: 70%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .page-content .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .page-content .container p.container-title {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+body .page-content .container .user-inputs {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .page-content .container .user-inputs input {
+  width: 200px;
+  height: 40px;
+}
+
+body .page-content .container .user-inputs button {
+  width: 40px;
+  height: 40px;
+}
+
+body .page-content .set-group-container {
+  height: 150px;
+  width: 300px;
+}
+
+body .page-content .send-string-container {
+  height: 150px;
+  width: 300px;
+}
+
+body .page-content .received-strings-container {
+  height: 400px;
+  width: 400px;
+}
+
+body .page-content .received-strings-container .received-strings {
+  border-radius: 10px;
+  width: 90%;
+  height: 75%;
+}
+
+body {
   background: -webkit-gradient(linear, left top, left bottom, from(#6B5DA3), to(#B38ABD));
   background: linear-gradient(#6B5DA3, #B38ABD);
+}
+
+body .page-content .container {
+  background: #A895D0;
+  border-radius: 15px;
+  -webkit-box-shadow: -10px 10px #2e2e2e5f;
+          box-shadow: -10px 10px #2e2e2e5f;
+}
+
+body .page-content .container p.container-title {
+  text-align: center;
+  font-size: 26px;
+}
+
+body .page-content .container .user-inputs {
+  margin-bottom: 10px;
+}
+
+body .page-content .container .user-inputs input {
+  border: 5px solid #D2A9E4;
+  color: #D2A9E4;
+  font-family: "consolas";
+  background: #64597D;
+  padding: 0px 10px;
+}
+
+body .page-content .container .user-inputs button {
+  cursor: pointer;
+  background: #D2A9E4;
+  color: white;
+  font-family: "montserrat";
+  font-weight: bold;
+}
+
+body .page-content .container .user-inputs * {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: -5px 5px #2e2e2e5f;
+          box-shadow: -5px 5px #2e2e2e5f;
+}
+
+body .page-content .received-strings-container {
+  margin: 0px;
+}
+
+body .page-content .received-strings-container .received-strings {
+  color: #D2A9E4;
+  font-family: "consolas";
+  background: #64597D;
+  border: 5px solid #D2A9E4;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+body .page-content .received-strings-container .received-strings .incoming-string {
+  color: #F87EB8;
+}
+
+.received-strings::-webkit-scrollbar-track body .page-content .received-strings-container .received-strings::-webkit-scrollbar-thumb {
+  width: 3px;
 }
 /*# sourceMappingURL=style.css.map */

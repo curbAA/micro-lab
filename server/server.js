@@ -70,7 +70,7 @@
         // ───────────────────────────────────── ANCHOR SOCKET IO MODULE SERIAL EVENT ─────
 
             socket.on("module:serial:event", (moduleData)=>{
-                betterConsoleLog("| server | --- Module Serial Event", moduleData.sender+":"+moduleData.action+":"+moduleData.values, "yellow");
+                betterConsoleLog("| server | >>> Module Serial Event", moduleData.sender+":"+moduleData.action+":"+moduleData.values, "yellow");
                 portSendEvent(moduleData.sender, moduleData.action, moduleData.values);
             });
             
@@ -209,15 +209,8 @@
         betterConsoleLog("Using Serial Port:", serialPortID + "\n", "orange");
 
         parser.on('data', (signal) => {
-            let signalProcess = signal.split("!")[0];
-            let signalData = signal.split("!")[1];
-            
-            if(signalProcess == "log"){ //Signal data is console-logged
-                betterConsoleLog("|---| micro:bit |--->", signalData + "\n", "orange");
-
-            } else if (signalProcess == "act"){  //An action occurs based on signal data
-                processSignalData(signalData);
-            }
+                betterConsoleLog("|---| micro:bit |--->", signal + "\n", "orange");
+                processSignal(signal);
         });
     });
 
@@ -225,13 +218,13 @@
 // ─────────────────────────────────── ANCHOR INCOMING SERIAL EVENT PROCESSOR ─────
 //
 
-   function processSignalData(signalData){
+   function processSignal(signal){
 
         // signalData = "sender:action:values;"
        
-        let sender = signalData.split(":")[0].trim();
-        let action = signalData.split(":")[1].trim();
-        let values = signalData.split(":")[2].trim();
+        let sender = signal.split(":")[0].trim();
+        let action = signal.split(":")[1].trim();
+        let values = signal.split(":")[2].trim();
 
         // console.log(sender, action, values);
 
