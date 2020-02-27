@@ -69,23 +69,6 @@ Setting the channel, sending a value, string, etc, and listenig to them when rec
 
 
 
-## Achieved Milestones
-#### Buttons
-- Real time button press and release event detection and visualization.
-
-#### Leds
-- Real time LED toggling in the micro:bit built in screen.
-
-#### Pins
-- Bein able to toggle any of the 3 main IO pins (0, 1, 2) individually and in real time.
-
-#### Accelerometer
-- Real time acceleration data plotting from micro:bit's accelerometer sensors
-
-### Compass
-- Real time compass orientation data visualization from the micro:bit
-
-
 
 ## Versioning
 - [Git](https://git-scm.com/)
