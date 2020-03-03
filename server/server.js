@@ -2,7 +2,7 @@
 // ─────────────────────────────────────────────────────── ANCHOR PATH MODULE ─────
 //
 
-    const path = require("path");
+    const pathModule = require("path");
 
 //
 // ────────────────────────────────────────────────────── ANCHOR SERVER DEPENDENCIES ─────
@@ -19,7 +19,7 @@
 // ──────────────────────────────────────────────────────────────── ANCHOR LOCATIONS ─────
 //
 
-    const _publicDir = path.join(__dirname, "/../public");
+    const _publicDir = pathModule.join(__dirname, "/../public");
 
     app.use("/home", express.static(_publicDir + "/home"));
     app.use("/public", express.static(_publicDir));
@@ -193,7 +193,7 @@
 
     */
     
-    const serialPortID = "COM3"; // Serial Port that's  going to be read
+    const serialPortID = "/dev/ttyACM0"; // Serial Port that's  going to be read
 
     const SerialPort = require('serialport');
     const Readline = SerialPort.parsers.Readline;
