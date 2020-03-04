@@ -64,7 +64,7 @@ div.page-content div.button-panel div {
   -webkit-filter: drop-shadow(2vw 2vw #7e7e7e);
           filter: drop-shadow(2vw 2vw #7e7e7e);
   color: #7e7e7e;
-  border-radius: 2vw;
+  border-radius: clamp(10px, 2vw, 20px);
   -webkit-transition: .1s;
   transition: .1s;
 }

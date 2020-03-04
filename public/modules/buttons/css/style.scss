@@ -53,7 +53,7 @@
 
                 color:#7e7e7e;
 
-                border-radius: 2vw;
+                border-radius: clamp(10px, 2vw, 20px);
 
                 transition:.1s;
 
