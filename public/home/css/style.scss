@@ -46,8 +46,8 @@ body {
 
                 margin-bottom: 0px;
 
-                transform:translateY(0px);
-                transition:transform .4s ease-in-out;
+                transform: translateY(0px);
+                transition: transform .4s ease-in-out;
 
                 img {
                     height: inherit;
@@ -55,27 +55,27 @@ body {
                 }
 
                 .dropup-content{
-                    transform:translateY(-20px);
-                    transition:transform .4s ease-in-out, visibility .4s ease-in-out;
+                    transform: translateY(-20px);
+                    transition: transform .4s ease-in-out, visibility .4s ease-in-out;
                 }
             }
 
             button:hover {
                 position: relative;
-                transform:translateY(-20px);
+                transform: translateY(-20px);
 
                 .dropup-content{
-                    transform:translateY(0px);
-                    transition:transform .4s ease-in-out;
+                    transform: translateY(0px);
+                    transition: transform .4s ease-in-out;
                 }
             }
         }
     }
 
     .background-transition{
-        position:absolute;
-        width:100vw;
-        height:100vh;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
 
         transform: translateY(0vh);
         transition: transform .4s ease-in-out;
@@ -133,23 +133,23 @@ body {
 
                 cursor: pointer;
 
-                outline:none;
+                outline: none;
 
                 .dropup-content{
                     font-family: "montserrat";
                     text-align: center;
                     font-weight: 700;
-                    font-size:2vh;
+                    font-size: 2vh;
 
                     visibility: hidden;
                 }
 
-                .dropup-content.accelerometer{color:#E88E72;}
-                .dropup-content.buttons{color:#E5B66F;}
-                .dropup-content.compass{color:#DAF277;}
-                .dropup-content.leds{color:#86D989;}
-                .dropup-content.pins{color:#9BEFF4;}
-                .dropup-content.radio{color:#B5B4F5;}
+                .dropup-content.accelerometer{ color:#E88E72; }
+                .dropup-content.buttons{ color:#E5B66F; }
+                .dropup-content.compass{ color:#DAF277; }
+                .dropup-content.leds{ color:#86D989; }
+                .dropup-content.pins{ color:#9BEFF4; }
+                .dropup-content.radio{ color:#B5B4F5; }
             }
 
             button:hover{
