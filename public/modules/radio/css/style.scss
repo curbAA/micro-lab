@@ -1,78 +1,75 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
 
-    body{
+    body {
 
-        overflow:scroll;
-        
-        .page-content{
+        .page-content {
             // border:1px solid red;
 
-            height:70%;
-            width:100%;
+            height: 80%;
+            width: 100%;
 
-            display:flex;
-            flex-flow:column wrap;
-            justify-content: space-evenly;
-            align-items: center;
-            
-            .container{
+            // border: 1px solid red;
+
+            .container {
                 // border:1px solid blue;
 
-                display:flex;
-                flex-flow:row wrap;
+                display: flex;
+                flex-flow: row wrap;
                 justify-content: center;
                 align-items: center;
-                
-                p.container-title{
-                    width:100%;
-                    height:fit-content;
+
+                margin:20px;
+
+                p.container-title {
+                    width: 100%;
+                    height: fit-content;
 
 
                     // border:1px solid green;
                 }
 
-                .user-inputs{
+                .user-inputs {
                     // border:1px solid yellow;
-                    width:100%;
+                    width: 100%;
 
-                    display:flex;
-                    flex-flow:row wrap;
+                    display: flex;
+                    flex-flow: row wrap;
                     justify-content: space-evenly;
                     align-items: center;
 
-                    input{
-                        width:200px;
-                        height:40px;
+                    input {
+                        width: 200px;
+                        height: 40px;
                     }
-                    
-                    button{
-                        width:40px;
-                        height:40px;
+
+                    button {
+                        width: 40px;
+                        height: 40px;
                     }
                 }
             }
 
-            .set-group-container{
-                height:150px;
-                width:300px;
+            .set-group-container {
+                height: clamp(100px, 30%, 150px);
+                width: clamp(300px, 40%, 400px);
             }
 
-            .send-string-container{
-                height:150px;
-                width:300px;
+            .send-string-container {
+                height: clamp(100px, 30%, 150px);
+                width: clamp(300px, 40%, 400px);
             }
 
-            .received-strings-container{
-                height:400px;
-                width:400px;
+            .received-strings-container {
+                height: clamp(300px, 50vw, 450px);
+                width: clamp(300px, 50vw, 400px);
 
-                .received-strings{
+                .received-strings {
                     // border:1px solid red;
-                    border-radius:10px;
+                    border-radius: 10px;
 
-                    width:90%;
-                    height:75%;
+                    width: clamp(250px, 50vw, 90%);
+                    height: clamp(250px, 50vw, 75%);
 
                 }
             }
@@ -80,78 +77,107 @@
 
     }
 
+    @media screen and (orientation:portrait){
+
+        body{
+            
+            .page-content{
+
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+        
+    }
+
+    @media screen and (orientation:landscape){
+        body {
+            .page-content {
+    
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+    
+        }
+    }
+
 // Appearence --------------------------------------------------------------
 
-    body{
-        background:linear-gradient(#6B5DA3, #B38ABD);
+    body {
+        background: linear-gradient(#6B5DA3, #B38ABD);
 
-        .page-content{
+        .page-content {
 
-            .container{
-                background:#A895D0;
-                border-radius:15px;
-                box-shadow:-10px 10px #2e2e2e5f;
+            .container {
+                background: #A895D0;
+                border-radius: 15px;
+                box-shadow: -10px 10px #2e2e2e5f;
 
-                p.container-title{
+                p.container-title {
                     text-align: center;
-                    font-size:26px;
+                    font-size: 26px;
                 }
 
-                .user-inputs{
-                    margin-bottom:10px;
-                    input{
-                        border:5px solid #D2A9E4;
+                .user-inputs {
+                    margin-bottom: 10px;
+
+                    input {
+                        border: 5px solid #D2A9E4;
 
                         color: #D2A9E4;
                         font-family: "consolas";
 
                         background: #64597D;
-                        padding:0px 10px;
+                        padding: 0px 10px;
 
                     }
-                    
-                    button{
-                        cursor:pointer;
 
-                        background:#D2A9E4;
+                    button {
+                        cursor: pointer;
 
-                        color:white;
+                        background: #D2A9E4;
+
+                        color: white;
                         font-family: "montserrat";
                         font-weight: bold;
                     }
 
-                    *{
+                    * {
                         border-radius: 5px;
-                        outline:none;
+                        outline: none;
                         border: none;
 
-                        box-shadow:-5px 5px #2e2e2e5f;
+                        box-shadow: -5px 5px #2e2e2e5f;
                     }
 
                 }
             }
 
-            .received-strings-container{
-                margin:0px;
+            .received-strings-container {
+                margin: 0px;
 
-                .received-strings{
+                .received-strings {
                     color: #D2A9E4;
                     font-family: "consolas";
 
-                    background:#64597D;
-                    
-                    border:5px solid #D2A9E4;
-                    
-                    padding:20px;
-                    overflow-y:scroll;
+                    background: #64597D;
 
-                    .incoming-string{
+                    border: 5px solid #D2A9E4;
+
+                    padding: 20px;
+                    overflow-y: scroll;
+
+                    .incoming-string {
                         color: #F87EB8;
                     }
                 }
 
-                .received-strings::-webkit-scrollbar-track & .received-strings::-webkit-scrollbar-thumb{
-                    width:3px;
+                .received-strings::-webkit-scrollbar-track & .received-strings::-webkit-scrollbar-thumb {
+                    width: 3px;
                 }
             }
         }
