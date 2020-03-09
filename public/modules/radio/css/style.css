@@ -70,7 +70,6 @@ body .page-content .received-strings-container {
 }
 
 body .page-content .received-strings-container .received-strings {
-  border-radius: 10px;
   width: clamp(250px, 50vw, 90%);
   height: clamp(250px, 50vw, 75%);
 }
@@ -165,6 +164,7 @@ body .page-content .received-strings-container .received-strings {
   font-family: "consolas";
   background: #64597D;
   border: 5px solid #D2A9E4;
+  border-radius: 10px;
   padding: 20px;
   overflow-y: scroll;
 }

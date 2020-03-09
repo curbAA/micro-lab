@@ -66,7 +66,6 @@
 
                 .received-strings {
                     // border:1px solid red;
-                    border-radius: 10px;
 
                     width: clamp(250px, 50vw, 90%);
                     height: clamp(250px, 50vw, 75%);
@@ -167,6 +166,7 @@
                     background: #64597D;
 
                     border: 5px solid #D2A9E4;
+                    border-radius: 10px;
 
                     padding: 20px;
                     overflow-y: scroll;
