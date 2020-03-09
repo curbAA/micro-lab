@@ -1,23 +1,6 @@
-body {
-  overflow: scroll;
-}
-
 body .page-content {
-  height: 70%;
+  height: 80%;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 body .page-content .container {
@@ -34,6 +17,7 @@ body .page-content .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 20px;
 }
 
 body .page-content .container p.container-title {
@@ -71,24 +55,59 @@ body .page-content .container .user-inputs button {
 }
 
 body .page-content .set-group-container {
-  height: 150px;
-  width: 300px;
+  height: clamp(100px, 30%, 150px);
+  width: clamp(300px, 40%, 400px);
 }
 
 body .page-content .send-string-container {
-  height: 150px;
-  width: 300px;
+  height: clamp(100px, 30%, 150px);
+  width: clamp(300px, 40%, 400px);
 }
 
 body .page-content .received-strings-container {
-  height: 400px;
-  width: 400px;
+  height: clamp(300px, 50vw, 450px);
+  width: clamp(300px, 50vw, 400px);
 }
 
 body .page-content .received-strings-container .received-strings {
-  border-radius: 10px;
-  width: 90%;
-  height: 75%;
+  width: clamp(250px, 50vw, 90%);
+  height: clamp(250px, 50vw, 75%);
+}
+
+@media screen and (orientation: portrait) {
+  body .page-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body .page-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 body {
@@ -145,6 +164,7 @@ body .page-content .received-strings-container .received-strings {
   font-family: "consolas";
   background: #64597D;
   border: 5px solid #D2A9E4;
+  border-radius: 10px;
   padding: 20px;
   overflow-y: scroll;
 }
