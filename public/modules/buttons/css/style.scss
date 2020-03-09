@@ -49,7 +49,7 @@
             div{
                 background:#c5c5c5;
 
-                filter:drop-shadow(2vw 2vw #7e7e7e);
+                filter:drop-shadow(clamp(0px, 2vw, 10px) clamp(0px, 2vw, 10px) #7e7e7e);
 
                 color:#7e7e7e;
 
