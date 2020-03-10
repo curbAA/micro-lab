@@ -52,6 +52,8 @@ Inside this app there is 6 "modules", each with a different purpose:
 Plots the data from the micro:bit's accelerometer live in a chart
 - **Compass**
 Shows the magnetic orientation of the micro:bit in real time
+- **~~Buttons~~**
+Showed micro:bit's buttons presses on screen
 - **Thermometer**
 Shows the current temperature of the micro:bit on screen
 - **Leds**
@@ -63,9 +65,69 @@ Allows you to set your radio channel, see what strings are being sent through it
  
 This allows you to make tests in real time with your micro:bit, without to having to code it every time. Allowing for more interactive classroom experiences with it.
 
+## Node - micro:bit comunication protocol
+So... there is something somewhat overcomplicated and maybe unnecesary that I had to do that I NEED to clarify
+
+Basically, what happens is that the micro:bit has an aparent limit of characters
+that it can read from the serial usb port (I've coded the micro:bit in JavaScript
+using MakeCode, by the way), or the node_module "SerialPort" has a limit for sending
+characters through the serial usb port; only happening when I send data **to** the
+micro:bit, never the other way around.
+
+You see, the way that I tell the micro:bit to do something is doing a port.write
+with a "sender", an "action", and "values":
+
+|   Data    |                    Utility                         |
+|-----------|----------------------------------------------------|
+|   Sender  | Indicates what module sent the signal              |
+|   Action  | Indicates what that module wants the microbit to do|
+|   Values  | Indicates how it wants the microbit to do it       |
+
+All of them are written in a single line separated by ":" and with an ";"
+at the end to indicate the end of the signal, like this:
+
+    "sender:action:value;"
+
+For example, lets say that I want to turn on an specific (0,0) LED in the screen
+of the microbit; it would be sent something like this trough serial port
+
+|   Data    |  Value   |                        Utility                             |
+|-----------|----------|------------------------------------------------------------|
+|   Sender  | "leds"   | signal sent from "leds" module                             |
+|   Action  | "toggle" | action indicating to execute "leds.toggle()"               |
+|   Values  | "0,0"    | values indicating the parameters of "leds.toggle()" ("0,0")|
+
+    Written in one line like: "leds:toggle:0,0;"
+
+This is a very simple action that it can be done by sending just a few characters
+through the serial port, but not for every case. Sometimes this combination can 
+exceed the aparent character limit of either the micro:bit reading capabilities, or the 
+"SerialPort" node_module port writing capabilites, and thus causing to loose of the
+signal when sent.
+
+The solution that I came up with was to reduce the amout of characters sent via the
+SerialPort by encoding the actions that are going to be sent to the microbit (but only
+the information thats sent from the server (computer) to the micro:bit):
+    
+I've created an object called "language" that stores all the actions and senders that
+the micro:bit can interpretate all literal actions and translate them to a 
+compressed/enconded version of it that only uses 4 characters, leaving more space for
+the values if the signal:
+
+|   Data    |  Value   |  Translation  |
+|-----------|----------|---------------|
+|   Sender  | "leds"   |    "leds"     |
+|   Action  | "toggle" |    "tggl"     |
+|   Values  | "0,0"    |    "0,0"      |
+
+    Written in one line like: "leds:tggl:0,0;"
+
+It's important to note that you are only going to **send** encoded/reduced messages **to**
+the micro:bit, never receive them from it.
+
 <br>
 
-# Versioning
+## Versioning
 - [Git](https://git-scm.com/)
 
 ## Authors
