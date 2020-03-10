@@ -47,8 +47,7 @@
 
     const io = socketIO(server);
 
-    //saves the page that you are in in case of disconnection event
-    var current_page; 
+    var current_page; //saves the page that you are in in case of disconnection event 
 
     io.on("connection", (socket)=>{
 
@@ -79,6 +78,11 @@
 //
 // ─────────────────────────────────── ANCHOR SERIAL LANGUAGE BETWEEN DEVICES ─────
 //
+
+    /*
+        ANCHOR MESSAGE ENCODING
+        Read "Node - micro:bit communication protocol" in "README.md" to know more about what's going on here
+    */
 
     const language = {
         normal: [
@@ -119,9 +123,14 @@
         }
     };
 
-    //Here you can add words with "language.addWord()" for quickly indexing
-    //new words that you want to send to the microbit in the microbit.
-    //Be sure that they are added as well (in the same way) in the microbit 
+    /*
+        ANCHOR MESSAGE ENCODING
+        Read "Node - micro:bit communication protocol" in "README.md" to know more about what's going on here
+    */
+
+    //  Here you can add words with "language.addWord()" for quickly indexing
+    //  new words that you want to send to the microbit in the microbit.
+    //  Be sure that they are added as well (in the same way) in the microbit
 
     language.addWord("toggle", "tggl");         //action (leds)
     language.addWord("clear", "cler");          //action (leds or any)
@@ -217,3 +226,5 @@
                 break;
         }
     }
+
+// ────────────────────────────────────────────────────────────────────────────────

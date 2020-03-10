@@ -122,6 +122,16 @@ the values if the signal:
 
     Written in one line like: "leds:tggl:0,0;"
 
+Other example would be:
+
+|   Data    |       Value        |      Translation      |
+|-----------|--------------------|-----------------------|
+|  Sender   | "radio"            |  "rdio"               |
+|  Action   | "sendString"       |  "sstr"               |
+|  Values   | "hello world"      |  "hello world"        |
+
+    Written in one line like: "rdio:sstr:hello world;"
+
 It's important to note that you are only going to **send** encoded/reduced messages **to**
 the micro:bit, never receive them from it.
 
