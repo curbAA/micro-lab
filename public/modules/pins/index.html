@@ -23,7 +23,7 @@
         <h1>Pins</h1>
     </header>
 
-    <div class="grid-container">
+    <div class="page-content">
         <div class="pin-panel">
 
             <!-- Switches -->
@@ -35,6 +35,20 @@
             </div>
             <div class="switch" id="switch-pin2">
                 <div class="slider"></div>
+            </div>
+            
+            <!-- Analog Inputs -->
+            <div class="analog" id="analog-pin0">
+                <input class="analog-input pin0" type="number" max="1023"></input> 
+                <button type="submit" class="analog-input-submit pin0">✔️</button>                   
+            </div>
+            <div class="analog" id="analog-pin1">
+                <input class="analog-input pin1" type="number" max="1023"></input> 
+                <button type="submit" class="analog-input-submit pin1">✔️</button>             
+            </div>
+            <div class="analog" id="analog-pin2">
+                <input class="analog-input pin2" type="number" max="1023"></input>                
+                <button type="submit" class="analog-input-submit pin2">✔️</button>  
             </div>
             
             <!-- Lock Icons -->
@@ -64,6 +78,11 @@
             <img src="/public/modules/pins/css/resources/lightning.svg" alt="" class="lightning" id="lightning-pin2">
             <img src="/public/modules/pins/css/resources/lightning3V.svg" alt="" class="lightning" id="lightning-pin3V">
             <img src="/public/modules/pins/css/resources/lightningGND.svg" alt="" class="lightning" id="lightning-pinGND">
+        </div>
+
+        <div class="pin-mode-switch">
+            <button class="button-digital">Digital</button>
+            <button class="button-analog"> Analog</button>
         </div>
     </div>
     

@@ -135,6 +135,7 @@
     language.addWord("toggle", "tggl");         //action (leds)
     language.addWord("clear", "cler");          //action (leds or any)
     language.addWord("digitalWrite", "dwrt");   //action (pins)
+    language.addWord("analogWrite", "awrt");    //action (pins)
     language.addWord("plotData", "pdta");       //action (accelerometer or compass)
     language.addWord("setGroup", "sgrp");       //action (radio)
     language.addWord("sendString", "sstr");     //action (radio)
