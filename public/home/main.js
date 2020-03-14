@@ -3,7 +3,7 @@
 //
 
     const btn_accelerometer = document.querySelector("#btn-accelerometer");
-    const btn_buttons = document.querySelector("#btn-buttons");
+    const btn_temperature = document.querySelector("#btn-temperature");
     const btn_compass = document.querySelector("#btn-compass");
     const btn_leds = document.querySelector("#btn-leds");
     const btn_pins = document.querySelector("#btn-pins");
@@ -14,9 +14,9 @@
         homeBackgroundPageTransition("linear-gradient(#934956, #D97575)");
         window.location.pathname = "/accelerometer/";
     });
-    btn_buttons.addEventListener("click", ()=>{
+    btn_temperature.addEventListener("click", ()=>{
         homeBackgroundPageTransition("linear-gradient(#B65C40, #CF976E)");
-        window.location.pathname = "/buttons/";
+        window.location.pathname = "/temperature/";
     });
     btn_compass.addEventListener("click", ()=>{
         homeBackgroundPageTransition("linear-gradient(#B08E36, #EEE596)");

@@ -3,7 +3,7 @@
 //
 
     const socket = io();
-    const _name = "buttons";
+    const _name = "temperature";
 
     socket.on("connect", () =>{
         socket.emit("module:connection:server", _name);

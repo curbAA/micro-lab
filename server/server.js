@@ -25,7 +25,7 @@
     app.use("/public", express.static(_publicDir));
 
     app.use("/accelerometer", express.static(_publicDir + "/modules/accelerometer"));
-    app.use("/buttons", express.static(_publicDir + "/modules/buttons"));
+    app.use("/temperature", express.static(_publicDir + "/modules/temperature"));
     app.use("/compass", express.static(_publicDir + "/modules/compass"));
     app.use("/leds", express.static(_publicDir + "/modules/leds"));
     app.use("/pins", express.static(_publicDir + "/modules/pins"));
@@ -88,7 +88,7 @@
         normal: [
             "home",             //sender
             "accelerometer",    //sender
-            "buttons",          //sender
+            "temperature",      //sender
             "compass",          //sender
             "leds",             //sender
             "pins",             //sender
@@ -136,7 +136,7 @@
     language.addWord("clear", "cler");          //action (leds or any)
     language.addWord("digitalWrite", "dwrt");   //action (pins)
     language.addWord("analogWrite", "awrt");    //action (pins)
-    language.addWord("plotData", "pdta");       //action (accelerometer or compass)
+    language.addWord("plotData", "pdta");       //action (accelerometer | compass | temperature)
     language.addWord("setGroup", "sgrp");       //action (radio)
     language.addWord("sendString", "sstr");     //action (radio)
 
