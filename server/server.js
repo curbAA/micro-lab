@@ -25,7 +25,7 @@
     app.use("/public", express.static(_publicDir));
 
     app.use("/accelerometer", express.static(_publicDir + "/modules/accelerometer"));
-    app.use("/temperature", express.static(_publicDir + "/modules/temperature"));
+    app.use("/thermometer", express.static(_publicDir + "/modules/thermometer"));
     app.use("/compass", express.static(_publicDir + "/modules/compass"));
     app.use("/leds", express.static(_publicDir + "/modules/leds"));
     app.use("/pins", express.static(_publicDir + "/modules/pins"));
