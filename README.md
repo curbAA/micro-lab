@@ -145,6 +145,7 @@ the micro:bit, never receive them back.
 
 ## Authors
 - [curbAA](https://github.com/curbAA) - *Initial work*
+> If you have any issues, questions, recommendations or ideas you can contactme at `curbaaaa@gmail.com`
 
 ## License
 This project is licensed under the **MIT License** - see the LICENSE.md file for details
