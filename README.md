@@ -65,6 +65,8 @@ Allows you to set your radio channel, see what strings are being sent through it
  
 This allows you to make tests in real time with your micro:bit, without to having to code it every time. Allowing for more interactive classroom experiences with it.
 
+<br>
+
 ## Node - micro:bit comunication protocol
 So... there is something somewhat overcomplicated and maybe unnecesary that I had to do that I NEED to clarify
 
