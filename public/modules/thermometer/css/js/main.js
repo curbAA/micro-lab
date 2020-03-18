@@ -1,27 +1,12 @@
 //
-// ───────────────────────────────────── ANCHOR BUTTON PRESSED VISUAL EFFECTS ─────
+// ───────────────────────────────────────── ANCHOR THERMOMETER BAR ANIMATION ─────
 //
 
-    function setButton(button, state){
-        if (state == "pressed"){
-            
-            button.style.marginBottom = "0px";
-            button.style.marginRight = "0px";
-            button.style.marginLeft = "2vw";
-
-            button.style.background = "#dba16a";
-            button.style.color = "#967252";
-            
-            button.style.filter = "none";
-        } else if (state == "released"){
-
-            button.style.marginBottom = "2vw";
-            button.style.marginRight = "2vw";
-            button.style.marginLeft = "0px";
-
-            button.style.background = "#c5c5c5";
-            button.style.color = "#7e7e7e";
-            
-            button.style.filter = "drop-shadow(2vw 2vw #7e7e7e)";
-        }
+    const thermometer_bar = document.querySelector("#thermometer-bar");
+    const temperature_number = document.querySelector("#temperature-number");
+    
+    function setTemperature(temp_input){
+        thermometer_bar.style.height = `${Math.ceil(250 * (temp_input / 55))}px`;
+        temperature_number.innerHTML = `${temp_input}°C`;
     }
+

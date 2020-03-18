@@ -3,18 +3,25 @@ body {
 }
 
 body div.page-content {
-  border: 5px solid cornflowerblue;
   width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body div.page-content * {
+  margin: .5em;
 }
 
 body div.page-content div.thermometer {
@@ -31,8 +38,8 @@ body div.page-content div.thermometer {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-box-shadow: -15px 15px #0000005f;
-          box-shadow: -15px 15px #0000005f;
+  -webkit-box-shadow: -10px 10px #0000002f;
+          box-shadow: -10px 10px #0000002f;
 }
 
 body div.page-content div.thermometer div.thermometer-bar {
@@ -43,6 +50,13 @@ body div.page-content div.thermometer div.thermometer-bar {
   max-height: 85%;
   height: 250px;
   margin-bottom: 25%;
+  -webkit-transition: height .6s;
+  transition: height .6s;
+}
+
+body div.page-content div.temperature-number {
+  text-align: center;
+  font-size: clamp(1em, 2vw, 2em);
 }
 
 body {

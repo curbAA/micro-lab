@@ -137,6 +137,7 @@
     language.addWord("digitalWrite", "dwrt");   //action (pins)
     language.addWord("analogWrite", "awrt");    //action (pins)
     language.addWord("plotData", "pdta");       //action (accelerometer | compass | thermometer)
+    language.addWord("calibrate", "clbt");       //action (compass)
     language.addWord("setGroup", "sgrp");       //action (radio)
     language.addWord("sendString", "sstr");     //action (radio)
 
@@ -149,7 +150,7 @@
         Read "Node - micro:bit communication protocol" in "README.md" to know more about what's going on here
     */
     
-    const serialPortID = "/dev/ttyACM0"; // Serial Port that's going to be read
+    const serialPortID = "COM3"; // Serial Port that's going to be read
 
     const SerialPort = require('serialport');
     const Readline = SerialPort.parsers.Readline;
@@ -174,22 +175,22 @@
 // ─────────────────────────────────── ANCHOR INCOMING SERIAL EVENT PROCESSOR ─────
 //
 
-   function processSignal(signal){
+    function processSignal(signal){
 
         // signalData = "sender:action:values;"
-       
+
         let sender = signal.split(":")[0].trim();
         let action = signal.split(":")[1].trim();
         let values = signal.split(":")[2].trim();
 
         // console.log(sender, action, values);
 
-       io.emit("server:serial:event", {
+        io.emit("server:serial:event", {
             sender:sender,
             action:action,
             values:values,
         });
-   }
+    }
 
 //
 // ─────────────────────────────── ANCHOR SERIAL PORT EVENT EXPORTER FUNCTION ─────
