@@ -1,5 +1,5 @@
 # micro:lab
-"micro:lab" is a testing tool targeted towards young students for learning, testing, and developing with the BBC micro:bit. This allows them to input commands from the application to their micro:bit or plot data from the microbit into the aplication. It was designed with the intention of easy and intuitive deployment/implementation. 
+"micro:lab" is a testing tool targeted towards young students for learning, testing, and developing with the BBC micro:bit. It allows them to input commands from the micro:lab app to their micro:bit or plot data from the it into the application. It was designed with the intention of easy and intuitive deployment/implementation and a minimal programming knowledge. 
 
 <br>
 
@@ -14,22 +14,24 @@
 ## Installation
 - First of all, create a directory in your machine and name it whatever you like, this is where you will download this repository.
 
-- **If you have Git installed:** just do git init in your repository and set the origin remote to my directory and do `"git pull origin master"`.
+- **If you have Git installed:** just do git init in your repository and set the origin remote to my github repository and do `"git pull origin master"`.
 
 - **If you don't have Git installed:** simply download a zip file to the directory you created and uncompress it with Winrar or something like that.
 
-- **Get your micro:bit** and plug it into your computer - you'll have to flash the `".hex"` file from the `"microbit files"` into your micro:bit for this to work.
+- **Get your micro:bit** and plug it into your computer - you'll have to flash the `"microlab.hex"` file from the `"microbit files"` into your micro:bit for this to work.
 
-- Open a terminal in the directory you installed micro:lab and run `npm install` for installing all the dependencies.
+- Open a terminal in the directory you installed micro:lab and run `npm install` for installing all the Node.js dependencies.
 
 - **Last, but not least, you will have to check in your machine in what port your micro:bit is connected** for Windows 10, you will have to open up "device manager" from the start menu, go to "ports (COM & LPT)" and checkout if you have like "COM3", "COM5", or something like that in there. Whatever it says, remember the port, open up your text editor, go to the micro:lab directory, go to "server" and open up "server.js", when you are in there, search for the variable "serialPortID" and change it to the value you got from the "device manager".
+
+If you are on Linux you probably know better than I do.
 
 <br>
 
 ## Deployment
-- Before running this, make sure you don't have any programs, like MakeCode, that read serial ports, becouse they will negate micro:lab access to those ports.
+- Before running, make sure you don't have any programs running, like MakeCode, that read serial ports, because they will negate micro:lab access to those ports.
 
-- For running micro:lab in your computer, you'll have to open up a terminal and go to the directory where you installed micro:lab and run `npm start`. This will start an express server in your local network in the port `3222` by default.
+- For running micro:lab in your computer, you'll have to open up a terminal and go to the directory where you installed micro:lab and run `npm start` (make sure have admin permissions). This will start an express server in your local network in the port `3222` by default.
 
 - Open up your web navigator of choice and type `"localhost:3222/home"` (or `"[your-ip]:3222/home`") in the navigation bar - now you have your application running in your local network.
 
@@ -37,10 +39,10 @@
 
 ## Common problems
 If you aren't receiving any data from the micro:bit when executing the aplication, this could be:
-- You are not using the correct `"serialPortID"` (change it in the `"server.js"` file)
-- You have another program opened that uses serial port readings (like MakeCode, for example)
-- You don't have your micro:bit plugged in correctly (try other USB port)
-- You touched too much your micro:bit without conscent and now it's mad at you...yes, really. For some reason when you touch the electronic components behind the micro:bit with your fingers, this can cause it to **completely** stop sending and receiving data from the serial port (just restart the node server in your terminal with `"rs"`, if it doesn't work, reset both the micro:bit and the server)
+- You are not using the correct `"serialPortID"` (change it in the `"server.js"` file).
+- You have another program opened that uses serial port readings (like MakeCode, for example).
+- You don't have your micro:bit plugged in correctly (try other USB port).
+- You touched too much your micro:bit without conscent and now it's mad at you...yes, really. For some reason when you touch the electronic components behind the micro:bit with your fingers or something conductive, this can cause it to **completely** stop sending and receiving data from the serial port (just restart the node server in your terminal with `"rs"`, if it doesn't work, reset both the micro:bit and the server).
 
 <br>
 
@@ -53,7 +55,7 @@ Plots the data from the micro:bit's accelerometer live in a chart
 - **Compass**
 Shows the magnetic orientation of the micro:bit in real time
 - **~~Buttons~~**
-Showed micro:bit's buttons presses on screen
+Showed micro:bit's buttons presses on screen (kinda boring)
 - **Thermometer**
 Shows the current temperature of the micro:bit on screen
 - **Leds**
@@ -64,6 +66,8 @@ Lets you toggle on or off digitally any on the 3 main IO pins on the micro:bit
 Allows you to set your radio channel, see what strings are being sent through it, and send strings as well.
  
 This allows you to make tests in real time with your micro:bit, without to having to code it every time. Allowing for more interactive classroom experiences with it.
+
+<br>
 
 ## Node - micro:bit comunication protocol
 So... there is something somewhat overcomplicated and maybe unnecesary that I had to do that I NEED to clarify
@@ -89,7 +93,7 @@ at the end to indicate the end of the signal, like this:
     "sender:action:value;"
 
 For example, lets say that I want to turn on an specific (0,0) LED in the screen
-of the microbit; it would be sent something like this trough serial port
+of the microbit; it would be sent something like this through serial port:
 
 |   Data    |  Value   |                        Utility                             |
 |-----------|----------|------------------------------------------------------------|
@@ -102,17 +106,16 @@ of the microbit; it would be sent something like this trough serial port
 This is a very simple action that it can be done by sending just a few characters
 through the serial port, but not for every case. Sometimes this combination can 
 exceed the aparent character limit of either the micro:bit reading capabilities, or the 
-"SerialPort" node_module port writing capabilites, and thus causing to loose of the
-signal when sent.
+"SerialPort" node_module port writing capabilites, and thus causing to loose some the
+signal data when sent.
 
 The solution that I came up with was to reduce the amout of characters sent via the
-SerialPort by encoding the actions that are going to be sent to the microbit (but only
-the information thats sent from the server (computer) to the micro:bit):
+SerialPort by encoding the data that is going to be sent to the microbit **(but only
+the information thats sent from the server (computer) to the micro:bit)**:
     
 I've created an object called "language" that stores all the actions and senders that
-the micro:bit can interpretate all literal actions and translate them to a 
-compressed/enconded version of it that only uses 4 characters, leaving more space for
-the values if the signal:
+the micro:bit can interpretate and translate them to a 
+compressed/enconded version that only uses 4 characters, leaving more space for the signal "values":
 
 |   Data    |  Value   |  Translation  |
 |-----------|----------|---------------|
@@ -133,7 +136,7 @@ Other example would be:
     Written in one line like: "rdio:sstr:hello world;"
 
 It's important to note that you are only going to **send** encoded/reduced messages **to**
-the micro:bit, never receive them from it.
+the micro:bit, never receive them back.
 
 <br>
 
@@ -142,6 +145,7 @@ the micro:bit, never receive them from it.
 
 ## Authors
 - [curbAA](https://github.com/curbAA) - *Initial work*
+> If you have any issues, questions, recommendations or ideas you can contactme at `curbaaaa@gmail.com`
 
 ## License
 This project is licensed under the **MIT License** - see the LICENSE.md file for details
