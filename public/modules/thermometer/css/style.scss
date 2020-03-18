@@ -1,0 +1,49 @@
+// Imports --------------------------------------------------------------
+// Positioning --------------------------------------------------------------
+    body{
+
+        overflow:hidden;
+
+        div.page-content{
+            
+            border:5px solid cornflowerblue;
+
+            width:100%;
+            height:100%;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            div.thermometer{
+                border:5px solid white;
+                border-radius:10vw 10vw 0 0;
+                
+                height:clamp(200px, 20vw, 600px);
+                width:clamp(60px, 6vw, 180px);
+
+                display:flex;
+                justify-content: center;
+                align-items: flex-end;
+
+                box-shadow: -15px 15px #0000005f;
+
+                div.thermometer-bar{
+                    background: white;
+                    border-radius: 10vw 10vw 0 0;
+
+                    max-width:50%;
+                    width:50%;
+                    max-height:85%;
+                    height:250px;
+
+                    margin-bottom:25%;
+                }
+            }
+        }
+    }
+// Appearence --------------------------------------------------------------
+
+    body{
+        background:linear-gradient(#B65C40, #CF976E);
+    }
