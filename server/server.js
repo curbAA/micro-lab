@@ -25,11 +25,11 @@
     app.use("/public", express.static(_publicDir));
 
     app.use("/accelerometer", express.static(_publicDir + "/modules/accelerometer"));
-    app.use("/thermometer", express.static(_publicDir + "/modules/thermometer"));
     app.use("/compass", express.static(_publicDir + "/modules/compass"));
     app.use("/leds", express.static(_publicDir + "/modules/leds"));
     app.use("/pins", express.static(_publicDir + "/modules/pins"));
     app.use("/radio", express.static(_publicDir + "/modules/radio"));
+    app.use("/thermometer", express.static(_publicDir + "/modules/thermometer"));
 
     app.use("/node_modules", express.static(_publicDir + "/../node_modules"));
 
@@ -88,11 +88,11 @@
         normal: [
             "home",             //sender
             "accelerometer",    //sender
-            "temperature",      //sender
             "compass",          //sender
             "leds",             //sender
             "pins",             //sender
             "radio",            //sender
+            "thermometer",      //sender
             "connection",       //action (any)
             "disconnection",    //action (any)
         ],
@@ -100,11 +100,11 @@
         translated: [
             "home",             //sender
             "accl",             //sender
-            "btns",             //sender
             "comp",             //sender
             "leds",             //sender
             "pins",             //sender
             "rdio",             //sender
+            "thrm",             //sender
             "conn",             //action (any)
             "disc",             //action (any)
         ],
@@ -136,7 +136,7 @@
     language.addWord("clear", "cler");          //action (leds or any)
     language.addWord("digitalWrite", "dwrt");   //action (pins)
     language.addWord("analogWrite", "awrt");    //action (pins)
-    language.addWord("plotData", "pdta");       //action (accelerometer | compass | temperature)
+    language.addWord("plotData", "pdta");       //action (accelerometer | compass | thermometer)
     language.addWord("setGroup", "sgrp");       //action (radio)
     language.addWord("sendString", "sstr");     //action (radio)
 
@@ -149,7 +149,7 @@
         Read "Node - micro:bit communication protocol" in "README.md" to know more about what's going on here
     */
     
-    const serialPortID = "/dev/ttyACM0"; // Serial Port that's  going to be read
+    const serialPortID = "/dev/ttyACM0"; // Serial Port that's going to be read
 
     const SerialPort = require('serialport');
     const Readline = SerialPort.parsers.Readline;
