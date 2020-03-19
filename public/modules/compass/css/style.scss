@@ -12,17 +12,17 @@
             align-items: center;
             
             .compass-box-container{
-                background:#c4944c;
-
                 width:clamp(200px, 70vw, 50vh);
                 height:clamp(200px, 70vw, 50vh);
 
-                border-radius: 500px;
+                display:flex;
+                flex-flow:row wrap;
+                justify-content: center;
+                align-items: center;
 
-                padding:20px;
-
-                box-shadow:-10px 10px #2e2e2e18;
-                
+                #calibrate-compass{
+                    margin-top:50px;
+                }
                 .compass-box{
                     display:flex;
                     flex-flow:row wrap;
@@ -35,7 +35,6 @@
                     .compass{
                         position:relative;
 
-                        background:none;
                         width:100%;
                         height:100%;
                         
@@ -72,5 +71,36 @@
 // Appearence --------------------------------------------------------------
 
     body{
-        background:linear-gradient(#B08E36, #EEE596)
+        background:linear-gradient(#B08E36, #EEE596);
+
+        .compass-box-container{
+            background:#c4944c;
+            border-radius: 500px;
+            padding:20px;
+            box-shadow:-10px 10px #2e2e2e18;
+
+            #calibrate-compass{
+                border:none;
+                border-radius:5px;
+                background:#c4944c;
+                color:white;
+                font-family: "nunito";
+                padding:1em;
+                box-shadow:-5px 5px #2e2e2e18;
+                transition:box-shadow .2s ease-in-out;
+                cursor:pointer;
+            }
+
+            #calibrate-compass:hover{
+                box-shadow:-10px 10px #2e2e2e18;
+                transition:box-shadow .2s ease-in-out;
+            }
+
+            .compass-box{
+
+                .compass{
+                    background:none;
+                }
+            }
+        }
     }
