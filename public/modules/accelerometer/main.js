@@ -6,33 +6,27 @@
     const _name = "accelerometer";
 
     socket.on("connect", () =>{
-        socket.emit("module:connection:server", _name); //! Paused
+        socket.emit("module:connection:server", _name);
     });
+
+    let xChartValueTarget = 0;
+    let yChartValueTarget = 0;
+    let zChartValueTarget = 0;
+    let targetIndex = 0;
 
     socket.on("server:serial:event", (signal)=>{
         if (signal.sender == _name){
             switch (signal.action){
                 case "plotData":
-                    let targetChart = signal.values.split(",")[0];
-                    let targetIndex = signal.values.split(",")[1];
-                    let targetValue = signal.values.split(",")[2];
 
-                    // console.log(targetChart, targetIndex, targetValue);
+                    targetIndex += 1;
+                    xChartValueTarget = signal.values.split(",")[0]
+                    yChartValueTarget = signal.values.split(",")[1]
+                    zChartValueTarget = signal.values.split(",")[2]
 
-                    switch (targetChart){
-                        case "x":
-                            chartPlotData(x_chart, targetValue, targetIndex, default_maximum_data_values);
-                            break;
-
-                        case "y":
-                            chartPlotData(y_chart, targetValue, targetIndex, default_maximum_data_values);
-                            break;
-
-                        case "z":
-                            chartPlotData(z_chart, targetValue, targetIndex, default_maximum_data_values);
-                            break;
-                    }
-
+                    chartPlotData(x_chart, xChartValueTarget, targetIndex, default_maximum_data_values);
+                    chartPlotData(y_chart, yChartValueTarget, targetIndex, default_maximum_data_values);
+                    chartPlotData(z_chart, zChartValueTarget, targetIndex, default_maximum_data_values);
                     break;
             }
         }
@@ -88,7 +82,7 @@
     };
 
     var default_chart_type = "line";
-    var default_maximum_data_values = 10;
+    var default_maximum_data_values = 20;
     var default_chart_data = {
         labels:["0", "1", "2", "3", "4", "5"],
         datasets:{
