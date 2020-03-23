@@ -6,19 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Nunito:400,700|Poppins:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/modules/_lib/css/style.css">
     <link rel="stylesheet" href="/public/modules/pins/css/style.css">
-    <script src="/public/modules/pins/css/js/main.js"></script>
+    <script defer src="/public/modules/pins/css/js/main.js"></script>
+    <script defer src="/public/modules/_lib/js/main.js"></script>
     <title>Pins</title>
 </head>
 <body>
+
+    <div class="background-transition"></div>
+    
     <header>
         <button id="btn-back" onclick="window.location.pathname = '/home/'"></button>
         <span class="divider-line"></span>
         <h1>Pins</h1>
     </header>
 
-    <div class="grid-container">
+    <div class="page-content">
         <div class="pin-panel">
 
             <!-- Switches -->
@@ -30,6 +35,20 @@
             </div>
             <div class="switch" id="switch-pin2">
                 <div class="slider"></div>
+            </div>
+            
+            <!-- Analog Inputs -->
+            <div class="analog" id="analog-pin0">
+                <input class="analog-input pin0" type="number" max="1023"></input> 
+                <button type="submit" class="analog-input-submit pin0">✔️</button>                   
+            </div>
+            <div class="analog" id="analog-pin1">
+                <input class="analog-input pin1" type="number" max="1023"></input> 
+                <button type="submit" class="analog-input-submit pin1">✔️</button>             
+            </div>
+            <div class="analog" id="analog-pin2">
+                <input class="analog-input pin2" type="number" max="1023"></input>                
+                <button type="submit" class="analog-input-submit pin2">✔️</button>  
             </div>
             
             <!-- Lock Icons -->
@@ -59,6 +78,11 @@
             <img src="/public/modules/pins/css/resources/lightning.svg" alt="" class="lightning" id="lightning-pin2">
             <img src="/public/modules/pins/css/resources/lightning3V.svg" alt="" class="lightning" id="lightning-pin3V">
             <img src="/public/modules/pins/css/resources/lightningGND.svg" alt="" class="lightning" id="lightning-pinGND">
+        </div>
+
+        <div class="pin-mode-switch">
+            <button class="button-digital">Digital</button>
+            <button class="button-analog"> Analog</button>
         </div>
     </div>
     

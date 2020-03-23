@@ -1,11 +1,15 @@
-div.grid-container {
+body {
+  overflow: hidden;
+}
+
+div.page-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -16,7 +20,7 @@ div.grid-container {
   width: 100vw;
 }
 
-div.grid-container div.pin-panel {
+div.page-content div.pin-panel {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto auto auto;
@@ -27,11 +31,11 @@ div.grid-container div.pin-panel {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  width: clamp(400px, 70vw, 700px);
+  width: clamp(300px, 70vw, 700px);
   height: clamp(100px, 60vw, 60vh);
 }
 
-div.grid-container div.pin-panel div.switch {
+div.page-content div.pin-panel div.switch {
   height: clamp(60px, 16vw, 12vh);
   width: clamp(30px, 8vw, 6vh);
   display: -webkit-box;
@@ -49,27 +53,41 @@ div.grid-container div.pin-panel div.switch {
           align-items: flex-start;
 }
 
-div.grid-container div.pin-panel div.switch div.slider {
+div.page-content div.pin-panel div.switch div.slider {
   width: clamp(5px, 2vw, 30px);
   height: clamp(5px, 2vw, 30px);
   margin: 25%;
 }
 
-div.grid-container div.pin-panel .pin {
+div.page-content div.pin-panel div.analog {
+  max-width: clamp(50px, 10vw, 100px);
+  display: none;
+}
+
+div.page-content div.pin-panel div.analog input {
+  width: 100%;
+  height: 30%;
+}
+
+div.page-content div.pin-panel .pin {
   width: clamp(50px, 10vw, 10vh);
 }
 
-div.grid-container div.pin-panel .pin img {
+div.page-content div.pin-panel .pin img {
   width: inherit;
   height: inherit;
 }
 
-div.grid-container div.pin-panel .lightning {
+div.page-content div.pin-panel .lightning {
   width: clamp(40px, 20vw, 6vh);
 }
 
-div.grid-container div.pin-panel .lock {
+div.page-content div.pin-panel .lock {
   width: clamp(25px, 20vw, 6vh);
+}
+
+div.page-content div.pin-mode-switch button {
+  margin: 0em 1em;
 }
 
 body {
@@ -77,7 +95,7 @@ body {
   background: linear-gradient(#455D8C, #89A3D6);
 }
 
-body div.grid-container div.pin-panel div.switch {
+body div.page-content div.pin-panel div.switch {
   background: none;
   border: clamp(0.5vh, 0.5vw, 20px) solid white;
   border-radius: 200px;
@@ -88,17 +106,68 @@ body div.grid-container div.pin-panel div.switch {
   transition: align-items .4s ease-in-out, -webkit-box-align .4s ease-in-out, -ms-flex-align .4s ease-in-out;
 }
 
-body div.grid-container div.pin-panel div.switch div.slider {
+body div.page-content div.pin-panel div.switch div.slider {
   border-radius: 200px;
   background: white;
 }
 
-body div.grid-container div.pin-panel .switch, body div.grid-container div.pin-panel .lock, body div.grid-container div.pin-panel .pin, body div.grid-container div.pin-panel .lightning {
+body div.page-content div.pin-panel .switch, body div.page-content div.pin-panel .lock, body div.page-content div.pin-panel .pin, body div.page-content div.pin-panel .lightning {
   -webkit-filter: drop-shadow(clamp(10px, 1vw, 12px) clamp(10px, 1vw, 12px) rgba(0, 0, 0, 0.2));
           filter: drop-shadow(clamp(10px, 1vw, 12px) clamp(10px, 1vw, 12px) rgba(0, 0, 0, 0.2));
 }
 
-body div.grid-container div.pin-panel #lightning-pin0, body div.grid-container div.pin-panel #lightning-pin1, body div.grid-container div.pin-panel #lightning-pin2 {
+body div.page-content div.pin-panel #lightning-pin0, body div.page-content div.pin-panel #lightning-pin1, body div.page-content div.pin-panel #lightning-pin2 {
   visibility: hidden;
+}
+
+body div.page-content div.pin-panel div.analog input {
+  padding: 20%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  color: white;
+  font-family: "nunito";
+  border: none;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+}
+
+body div.page-content div.pin-panel div.analog input::-webkit-outer-spin-button,
+body div.page-content div.pin-panel div.analog input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body div.page-content div.pin-panel div.analog button {
+  border: none;
+  background: #46a563;
+  padding: 0px .5em;
+  color: white;
+}
+
+body div.page-content div.pin-mode-switch {
+  padding: .5em 1em;
+}
+
+body div.page-content div.pin-mode-switch button {
+  font-size: 1em;
+  font-family: "nunito";
+  color: white;
+  padding: .5em 1em;
+  background: #2e2e2e;
+  border: 5px solid #2e2e2e;
+  border-radius: .5em;
+  -webkit-transition: background .1s;
+  transition: background .1s;
+}
+
+body div.page-content div.pin-mode-switch button:active {
+  background: #6d6d6d;
+  -webkit-transition: background .0s;
+  transition: background .0s;
+}
+
+body div.page-content div.pin-mode-switch button.button-analog {
+  background: none;
+  border: 5px solid white;
 }
 /*# sourceMappingURL=style.css.map */

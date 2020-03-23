@@ -2,20 +2,49 @@
 // ─────────────────────────────────────────────────────────── ANCHOR BUTTONS ─────
 //
 
-    const btn_accelerometer = document.querySelector("#btn-accelerometer");
-    const btn_buttons = document.querySelector("#btn-buttons");
-    const btn_compass = document.querySelector("#btn-compass");
-    const btn_leds = document.querySelector("#btn-leds");
-    const btn_pins = document.querySelector("#btn-pins");
-    const btn_radio = document.querySelector("#btn-radio");
+    const modules = {
+        accelerometer: {
+            button: document.querySelector("#btn-accelerometer"),
+            background: "linear-gradient(#934956, #D97575)",
+            path: "/accelerometer/"
+        },
+        compass: {
+            button: document.querySelector("#btn-compass"),
+            background: "linear-gradient(#B08E36, #EEE596)",
+            path: "/compass/"
+        },
+        leds: {
+            button: document.querySelector("#btn-leds"),
+            background: "linear-gradient(#6C9346, #91CF94)",
+            path: "/leds/"
+        },
+        pins: {
+            button: document.querySelector("#btn-pins"),
+            background: "linear-gradient(#455D8C, #89A3D6)",
+            path: "/pins/"
+        },
+        radio: {
+            button: document.querySelector("#btn-radio"),
+            background: "linear-gradient(#6B5DA3, #B38ABD)",
+            path: "/radio/"
+        },
+        thermometer: {
+            button: document.querySelector("#btn-thermometer"),
+            background: "linear-gradient(#B65C40, #CF976E)",
+            path: "/thermometer/"
+        },
+    };
     
+    for (const m in modules){
+        modules[m].button.addEventListener("click", ()=>{changePage(modules[m]);});
+    }
 
-    btn_accelerometer.addEventListener("click", ()=>{window.location.pathname = "/accelerometer/";});
-    btn_buttons.addEventListener("click", ()=>{window.location.pathname = "/buttons/";});
-    btn_compass.addEventListener("click", ()=>{window.location.pathname = "/compass/";});
-    btn_leds.addEventListener("click", ()=>{window.location.pathname = "/leds/";});
-    btn_pins.addEventListener("click", ()=>{window.location.pathname = "/pins/";});
-    btn_radio.addEventListener("click", ()=>{window.location.pathname = "/radio/";});
+    function changePage(modl){
+        homeBackgroundPageTransition(modl.background);
+        window.location.pathname = modl.path;
+    }
+
+
 
 //
 // ───────────────────────────────────────────────────────── ANCHOR SOCKET IO ─────

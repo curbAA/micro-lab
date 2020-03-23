@@ -20,49 +20,33 @@ function changeHomeView(button_panel, button_list, view){
     }
 }
 
+function homeBackgroundPageTransition(background){
+    let background_transition = document.querySelector(".background-transition");
+
+    background_transition.style.background = background;
+    background_transition.style.transform = "translateY(-100vh)";
+}
+
 //
-// ─────────────────────────────────────────── ANCHOR WAIT FOR WINDOW LOADING ─────
+// ────────────────────────────── ANCHOR SWITCH BETWEEN NARROW AND WIDE VIEWS ─────
 //
 
-    window.addEventListener("load", ()=>{
+    let button_panel = document.querySelector(".button-panel");
+    let button_list = document.querySelectorAll(".button");
 
-        //
-        // ────────────────────────────── ANCHOR SWITCH BETWEEN NARROW AND WIDE VIEWS ─────
-        //
-
-            const button_panel = document.querySelector(".button-panel");
-            const button_list = document.querySelectorAll(".button");
-
-            if (window.innerWidth <= 650){
-                changeHomeView(button_panel, button_list, "narrow");
-                
-            } else {
-                changeHomeView(button_panel, button_list, "wide");
-            }
-
-            window.addEventListener("resize", ()=>{
-                if (window.innerWidth <= 650){
-                    changeHomeView(button_panel, button_list, "narrow");
-                    
-                } else {
-                    changeHomeView(button_panel, button_list, "wide");
-                }
-            });
-
+    if (window.innerWidth <= 650){
+        changeHomeView(button_panel, button_list, "narrow");
         
+    } else {
+        changeHomeView(button_panel, button_list, "wide");
+    }
 
-        //
-        // ──────────────────── ANCHOR BUTTON CHANGE BACKGROUND EFFECT ─────
-        //
-
-            let body = document.querySelector("body");
-
-            button_list[0].addEventListener("click", ()=>{body.style.background = "#934956"}); // Accelerometer Button Click
-            button_list[1].addEventListener("click", ()=>{body.style.background = "#B65C40"}); // Buttons Button Click
-            button_list[2].addEventListener("click", ()=>{body.style.background = "#B08E36"}); // Compass Button Click
-            button_list[3].addEventListener("click", ()=>{body.style.background = "#6C9346"}); // Leds Button Click
-            button_list[4].addEventListener("click", ()=>{body.style.background = "#455D8C"}); // Pins Button Click
-            button_list[5].addEventListener("click", ()=>{body.style.background = "#6B5DA3"}); // Radio Button Click
-
+    window.addEventListener("resize", ()=>{
+        if (window.innerWidth <= 650){
+            changeHomeView(button_panel, button_list, "narrow");
+            
+        } else {
+            changeHomeView(button_panel, button_list, "wide");
+        }
     });
 

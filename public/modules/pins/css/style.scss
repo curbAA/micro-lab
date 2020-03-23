@@ -1,9 +1,13 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
 
-    div.grid-container{
+    body{
+        overflow:hidden;
+    }
+
+    div.page-content{
         display:flex;
-        flex-flow:row wrap;
+        flex-flow:column wrap;
 
         justify-content: center;
         align-items: center;
@@ -19,7 +23,7 @@
             align-items: center;
             justify-items: center;
         
-            width:clamp(400px, 70vw, 700px);
+            width:clamp(300px, 70vw, 700px);
             height:clamp(100px, 60vw, 60vh);
 
             div.switch{
@@ -35,6 +39,16 @@
                     width:clamp(5px, 2vw, 30px);
                     height: clamp(5px, 2vw, 30px);
                     margin:25%;
+                }
+            }
+
+            div.analog{
+                max-width:clamp(50px, 10vw, 100px);
+                display:none;
+
+                input{
+                    width:100%;
+                    height:30%;
                 }
             }
 
@@ -56,6 +70,12 @@
                 width:clamp(25px,20vw, 6vh);
             }
         }
+
+        div.pin-mode-switch{
+            button{
+                margin:0em 1em;
+            }
+        }
     }
 
 // Appearence --------------------------------------------------------------
@@ -63,7 +83,7 @@
     body{
         background:linear-gradient(#455D8C, #89A3D6);
         
-        div.grid-container{
+        div.page-content{
             // border:1px solid red; 
 
             div.pin-panel{
@@ -93,6 +113,68 @@
 
                 #lightning-pin0, #lightning-pin1, #lightning-pin2{
                     visibility: hidden;
+                }
+
+                div.analog{
+
+                    input{
+                        padding:20%;
+
+                        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+
+                        color:white;
+                        font-family:"nunito";
+
+                        border:none;
+                        border-bottom:2px solid white;
+                        border-top:2px solid white;
+                    }
+
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    button{
+                        border:none;
+
+                        background:rgb(70, 165, 99);
+
+                        padding:0px .5em;
+                        
+                        color:white;
+                    }
+                }
+            }
+
+            div.pin-mode-switch{
+                // border:1px solid red;
+                padding:.5em 1em;
+
+                button{
+                    font-size:1em;
+                    font-family:"nunito";
+                    color:white;
+
+                    padding:.5em 1em;
+
+                    background:#2e2e2e;
+
+                    border:5px solid #2e2e2e;
+                    border-radius:.5em;
+
+                    transition:background .1s;
+                }
+
+                button:active{
+                    background:#6d6d6d;
+                    transition:background .0s;
+                }
+    
+                button.button-analog{
+                    background:none;
+                    border:5px solid white;
                 }
             }
         }

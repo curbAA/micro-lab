@@ -12,7 +12,7 @@ body {
 }
 
 body .version-tag {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -30,8 +30,9 @@ body .page-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   height: 100%;
   width: 100%;
 }
@@ -47,17 +48,19 @@ body .page-content .button-panel {
       grid-template-rows: auto auto;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
-  gap: 4vw;
+  gap: clamp(0px, 4vw, 30px);
 }
 
 body .page-content .button-panel button {
-  width: clamp(16px, 20vw, 20vh);
-  height: clamp(16px, 20vw, 20vh);
+  width: clamp(200px, 20vw, 300px);
+  height: clamp(200px, 20vw, 300px);
   margin-bottom: 0px;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
 body .page-content .button-panel button img {
@@ -66,31 +69,39 @@ body .page-content .button-panel button img {
 }
 
 body .page-content .button-panel button .dropup-content {
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
-}
-
-body .page-content .button-panel button img:hover + .dropup-content {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  -webkit-transition: visibility .4s ease-in-out, -webkit-transform .4s ease-in-out;
+  transition: visibility .4s ease-in-out, -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, visibility .4s ease-in-out;
+  transition: transform .4s ease-in-out, visibility .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
 body .page-content .button-panel button:hover {
   position: relative;
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
+}
+
+body .page-content .button-panel button:hover .dropup-content {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
+body .background-transition {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
 body {
@@ -104,7 +115,7 @@ body {
 body .version-tag {
   padding: 10px;
   color: #ffffff42;
-  font-family: "consolas";
+  font-family: "nunito";
 }
 
 body .page-content h1 {
@@ -134,13 +145,15 @@ body .page-content .button-panel button .dropup-content {
   font-family: "montserrat";
   text-align: center;
   font-weight: 700;
+  font-size: 2vh;
+  visibility: hidden;
 }
 
 body .page-content .button-panel button .dropup-content.accelerometer {
   color: #E88E72;
 }
 
-body .page-content .button-panel button .dropup-content.buttons {
+body .page-content .button-panel button .dropup-content.thermometer {
   color: #E5B66F;
 }
 
@@ -158,5 +171,9 @@ body .page-content .button-panel button .dropup-content.pins {
 
 body .page-content .button-panel button .dropup-content.radio {
   color: #B5B4F5;
+}
+
+body .page-content .button-panel button:hover .dropup-content {
+  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */

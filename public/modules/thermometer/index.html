@@ -1,4 +1,4 @@
-<!--! COMPASS -->
+<!--! THERMOMETER -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,33 +8,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Nunito:400,700|Poppins:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/modules/_lib/css/style.css">
-    <link rel="stylesheet" href="/public/modules/compass/css/style.css">
-    <script defer src="/public/modules/compass/css/js/main.js"></script>
+    <link rel="stylesheet" href="/public/modules/thermometer/css/style.css">
+    <script defer src="/public/modules/thermometer/css/js/main.js"></script>
     <script defer src="/public/modules/_lib/js/main.js"></script>
-    <title>Compass</title>
+    <title>Thermometer</title>
 </head>
 <body>
-
+    
     <div class="background-transition"></div>
-
+    
     <header>
         <button id="btn-back" onclick="window.location.pathname = '/home/'"></button>
         <span class="divider-line"></span>
-        <h1>Compass</h1>
+        <h1>Thermometer</h1>
     </header>
 
     <div class="page-content">
-        <div class="compass-box-container">
-            <div class="compass-box">
-                <div class="compass">
-                    <img src="css/resources/Compass.svg" alt="compass" srcset="">
-                    <div class="arrow">
-                        <img src="css/resources/Arrow.svg" alt="" srcset="">
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" id="calibrate-compass">Calibrate Compass</button>
+        <div class="thermometer">
+            <div class="thermometer-bar" id="thermometer-bar"></div>
+        </div>
+        <div class="temperature-number" id="temperature-number">
         </div>
     </div>
     

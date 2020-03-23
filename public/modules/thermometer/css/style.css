@@ -1,0 +1,66 @@
+body {
+  overflow: hidden;
+}
+
+body div.page-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body div.page-content * {
+  margin: .5em;
+}
+
+body div.page-content div.thermometer {
+  border: 5px solid white;
+  border-radius: 10vw 10vw 0 0;
+  height: clamp(200px, 20vw, 600px);
+  width: clamp(60px, 6vw, 180px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-shadow: -10px 10px #0000002f;
+          box-shadow: -10px 10px #0000002f;
+}
+
+body div.page-content div.thermometer div.thermometer-bar {
+  background: white;
+  border-radius: 10vw 10vw 0 0;
+  max-width: 50%;
+  width: 50%;
+  max-height: 85%;
+  height: 250px;
+  margin-bottom: 25%;
+  -webkit-transition: height .6s;
+  transition: height .6s;
+}
+
+body div.page-content div.temperature-number {
+  text-align: center;
+  font-size: clamp(1em, 2vw, 2em);
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#B65C40), to(#CF976E));
+  background: linear-gradient(#B65C40, #CF976E);
+}
+/*# sourceMappingURL=style.css.map */

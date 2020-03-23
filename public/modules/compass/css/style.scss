@@ -1,7 +1,106 @@
 // Imports --------------------------------------------------------------
 // Positioning --------------------------------------------------------------
+
+    body{
+        .page-content{
+            width:100%;
+            height:75vh;
+
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: center;
+            align-items: center;
+            
+            .compass-box-container{
+                width:clamp(200px, 70vw, 50vh);
+                height:clamp(200px, 70vw, 50vh);
+
+                display:flex;
+                flex-flow:row wrap;
+                justify-content: center;
+                align-items: center;
+
+                #calibrate-compass{
+                    margin-top:50px;
+                }
+                .compass-box{
+                    display:flex;
+                    flex-flow:row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    width:100%;
+                    height:100%;
+                    
+                    .compass{
+                        position:relative;
+
+                        width:100%;
+                        height:100%;
+                        
+                        display:flex;
+                        flex-flow:row wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        img{
+                            width:inherit;
+                            height:inherit;
+
+                        }
+
+                        .arrow{
+                            position:absolute;
+
+                            height:clamp(50px, 100vw, 150px);
+                            width:clamp(25px, 100vw, 50px);
+
+                            transition:transform 0.09s;
+
+                            img{
+                                width:inherit;
+                                height:inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 // Appearence --------------------------------------------------------------
 
     body{
-        background:linear-gradient(#B08E36, #EEE596)
+        background:linear-gradient(#B08E36, #EEE596);
+
+        .compass-box-container{
+            background:#c4944c;
+            border-radius: 500px;
+            padding:20px;
+            box-shadow:-10px 10px #2e2e2e18;
+
+            #calibrate-compass{
+                border:none;
+                border-radius:5px;
+                background:#c4944c;
+                color:white;
+                font-family: "nunito";
+                padding:1em;
+                box-shadow:-5px 5px #2e2e2e18;
+                transition:box-shadow .2s ease-in-out;
+                cursor:pointer;
+            }
+
+            #calibrate-compass:hover{
+                box-shadow:-10px 10px #2e2e2e18;
+                transition:box-shadow .2s ease-in-out;
+            }
+
+            .compass-box{
+
+                .compass{
+                    background:none;
+                }
+            }
+        }
     }

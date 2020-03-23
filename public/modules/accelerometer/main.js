@@ -9,30 +9,24 @@
         socket.emit("module:connection:server", _name);
     });
 
+    let xChartValueTarget = 0;
+    let yChartValueTarget = 0;
+    let zChartValueTarget = 0;
+    let targetIndex = 0;
+
     socket.on("server:serial:event", (signal)=>{
         if (signal.sender == _name){
             switch (signal.action){
                 case "plotData":
-                    let targetChart = signal.values.split(",")[0];
-                    let targetIndex = signal.values.split(",")[1];
-                    let targetValue = signal.values.split(",")[2];
 
-                    // console.log(targetChart, targetIndex, targetValue);
+                    targetIndex += 1;
+                    xChartValueTarget = signal.values.split(",")[0]
+                    yChartValueTarget = signal.values.split(",")[1]
+                    zChartValueTarget = signal.values.split(",")[2]
 
-                    switch (targetChart){
-                        case "x":
-                            chartPlotData(x_chart, targetValue, targetIndex, maximum_data_values);
-                            break;
-
-                        case "y":
-                            chartPlotData(y_chart, targetValue, targetIndex, maximum_data_values);
-                            break;
-
-                        case "z":
-                            chartPlotData(z_chart, targetValue, targetIndex, maximum_data_values);
-                            break;
-                    }
-
+                    chartPlotData(x_chart, xChartValueTarget, targetIndex, default_maximum_data_values);
+                    chartPlotData(y_chart, yChartValueTarget, targetIndex, default_maximum_data_values);
+                    chartPlotData(z_chart, zChartValueTarget, targetIndex, default_maximum_data_values);
                     break;
             }
         }
@@ -44,9 +38,11 @@
 
     Chart.defaults.global.defaultFontColor = 'rgba(255,255,255,0.5)';
     Chart.defaults.global.defaultFontFamily = 'montserrat';
-    Chart.defaults.global.defaultFontSize = 10;
+    Chart.defaults.global.defaultFontSize = 12;
 
-    var options = {
+    var default_chart_options = {
+
+        aspectRatio:2.5,
 
         legend:{
             display:false,
@@ -86,7 +82,7 @@
     };
 
     var default_chart_type = "line";
-    var maximum_data_values = 10;
+    var default_maximum_data_values = 20;
     var default_chart_data = {
         labels:["0", "1", "2", "3", "4", "5"],
         datasets:{
@@ -107,12 +103,12 @@
             data: {
                 datasets: [{
                     label: "X",
-                    backgroundColor: "rgba(255, 50, 100, 0.2)",
-                    borderColor: "rgba(255, 50, 100, 0.7)",
+                    backgroundColor: "rgba(255, 100, 150, 0.2)",
+                    borderColor: "rgba(255, 150, 150, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
         
 
@@ -126,12 +122,12 @@
             data: {
                 datasets: [{
                     label: "Y",
-                    backgroundColor: "rgba(50, 255, 100, 0.2)",
-                    borderColor: "rgba(50, 255, 100, 0.7)",
+                    backgroundColor: "rgba(100, 255, 150, 0.2)",
+                    borderColor: "rgba(100, 255, 150, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
         
         
@@ -145,12 +141,12 @@
             data: {
                 datasets: [{
                     label: "Z",
-                    backgroundColor: "rgba(100, 50, 255, 0.2)",
-                    borderColor: "rgba(100, 50, 255, 0.7)",
+                    backgroundColor: "rgba(100, 150, 255, 0.2)",
+                    borderColor: "rgba(100, 150, 255, 0.7)",
                     borderWidth: default_chart_data.datasets.borderWidth,
                 }]
             },
-            options: options
+            options: default_chart_options
         });
 
     //
@@ -172,27 +168,12 @@
                 chart.data.labels.push(index);
             }
 
-            if (chart == x_chart) document.querySelector(".chart-container.x-axis .chart-current-value").innerHTML = value;
-            if (chart == y_chart) document.querySelector(".chart-container.y-axis .chart-current-value").innerHTML = value;
-            if (chart == z_chart) document.querySelector(".chart-container.z-axis .chart-current-value").innerHTML = value;
+            if (chart == x_chart) document.querySelector(".chart-box.x-axis .chart-current-value").innerHTML = value;
+            if (chart == y_chart) document.querySelector(".chart-box.y-axis .chart-current-value").innerHTML = value;
+            if (chart == z_chart) document.querySelector(".chart-box.z-axis .chart-current-value").innerHTML = value;
 
             chart.update();
         }
-
-        // chartPlotData(x_chart, 2000, "0", 4);
-        // chartPlotData(x_chart, 100, "1", 4);
-        // chartPlotData(x_chart, -1500, "2", 4);
-        // chartPlotData(x_chart, -1500, "3", 4);
-
-        // chartPlotData(y_chart, 2000, "0", 4);
-        // chartPlotData(y_chart, 100, "1", 4);
-        // chartPlotData(y_chart, -1500, "2", 4);
-        // chartPlotData(y_chart, -1500, "3", 4);
-
-        // chartPlotData(z_chart, 2000, "0", 4);
-        // chartPlotData(z_chart, 100, "1", 4);
-        // chartPlotData(z_chart, -1500, "2", 4);
-        // chartPlotData(z_chart, -1500, "3", 4);
         
 
         
