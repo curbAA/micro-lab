@@ -1,104 +1,124 @@
-// ANCHOR Imports ------------------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap');
 
-    @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap');
+$base-dark: #2E4452;
+$base-blue: #4BB8A7;
+$base-red: #EB5B49;
+$white10: rgba(255, 255, 255, 0.1);
+$white20: rgba(255, 255, 255, 0.2);
+$white30: rgba(255, 255, 255, 0.2);
+$white40: rgba(255, 255, 255, 0.2);
+$white50: rgba(255, 255, 255, 0.2);
+$regular-font-size: 18px;
+$text-font-size: 22px;
+$header-title-font-size: 50px;
+$header-subtitle-font-size: 26px;
+$container-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 
-// ANCHOR Positioning ------------------------------------------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+}
 
-    *{
-        margin:0;
-        padding:0;
-        box-sizing: border-box;
+body {
+    background: white;
+
+    // .proto-container {
+    //     .proto {
+    //     }
+    // }
+
+    .container {
+
+        .inner {
+            display: grid;
+            grid-template-columns: 300px auto;
+            grid-template-rows: auto;
+
+            .sidebar {
+                display: flex;
+                flex-flow: column wrap;
+                background: $base-dark;
+                width: 100%;
+                height: 100vh;
+
+                .header {
+                    display: flex;
+                    justify-content: center;
+
+                    a{
+                        // border:1px solid red;
+                        display:flex;
+                        flex-flow:row wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        img.logo {
+                            width: 80%;
+                            margin-top: 25px;
+
+                            // border:1px solid red;
+                        }
+                    }
+                }
+
+                .button-list {
+                    color: rgba(255, 255, 255, 0.5);
+                    margin-top: 50px;
+
+                    ul {
+
+                        li {
+                            display: flex;
+                            flex-flow: row wrap;
+                            align-items: center;
+                            width: 100%;
+                            padding: 20px 25px;
+                            cursor: pointer;
+
+                            .button-icon {
+                                width: 20px;
+                            }
+
+                            span {
+                                margin-left: 25px;
+                                font-weight: 300;
+                                font-size: $regular-font-size;
+                            }
+
+                        }
+
+                        li:hover {
+                            background: $white10;
+
+                            .button-icon {
+
+                                path {
+                                    fill: $base-blue;
+                                }
+                            }
+
+                            span {
+                                color: $base-blue;
+                            }
+                        }
+                    }
+                }
+
+                .footer {
+                    // border:1px solid lightgreen;
+                    margin-top: auto;
+                    text-align: center;
+                    padding: 10px;
+
+                    a {
+                        color: $white20;
+                        font-weight: 300;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
-
-    body{
-        height:100vh;
-        width:100vw;
-
-        overflow: scroll;
-
-        .background-transition{
-            z-index:10;
-
-            position:absolute;
-            width:100vw;
-            height:100vh;
-            transform:translateY(-100vh);
-            transition: transform .4s;
-        }
-
-        header{
-            display:flex;
-            flex-flow:row nowrap;
-            justify-content: space-around;
-            align-items: center;
-
-            height:clamp(0px, 20vw, 110px);
-            max-width: fit-content;
-
-            h1{
-                margin:0 3em 0 0;
-            }
-            
-            .divider-line{
-                margin:0em 2em;
-                height:60%;
-                width:clamp(0px, 1vw, 5px);
-            }
-
-            #btn-back{
-                margin:0 0 0 2em;
-        
-                width:clamp(5vh, 5vw, 50px);
-                height:clamp(5vh, 5vw, 50px);
-            }
-        }
-    }
-
-// ANCHOR Appearance ------------------------------------------------------------------------------------
-
-    body{
-        font-family: "poppins";
-        color:white;
-
-        overflow: hidden;
-        
-        header{
-            background:#2e2e2e;
-        
-            // border:1px solid red;
-
-            border-right:1vh solid white;
-            border-bottom:1vh solid white;
-            border-bottom-right-radius: 100px;
-
-            filter: drop-shadow(-15px 15px 0px #0000002f);
-        
-            h1{
-
-                font-family: "nunito";
-                font-size: clamp(20px, 5vw, 40px); //"clamp" makes a changing value (20vh) stay inside certain limits
-                font-weight: bold;
-                // border:1px solid red;
-            }
-
-            .divider-line{
-                background: rgba(255, 255, 255, 0.219);
-            }
-        
-            #btn-back{
-                border:none;
-
-                background:url("/public/modules/_lib/css/resources/home_btn.svg");
-                background-size:cover;
-                
-                cursor: pointer;
-                outline:none;
-
-                // border:1px solid red;
-            }
-        }
-
-        .background-transition{
-            background:#2e2e2e;
-        }
-    }
+}

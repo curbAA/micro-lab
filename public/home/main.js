@@ -34,13 +34,14 @@
             path: "/thermometer/"
         },
     };
+
+    console.log(modules);
     
     for (const m in modules){
         modules[m].button.addEventListener("click", ()=>{changePage(modules[m]);});
     }
 
     function changePage(modl){
-        homeBackgroundPageTransition(modl.background);
         window.location.pathname = modl.path;
     }
 

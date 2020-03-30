@@ -1,99 +1,120 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "poppins";
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  overflow: scroll;
+  background: white;
 }
 
-body .background-transition {
-  z-index: 10;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+body .container .inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px auto;
+      grid-template-columns: 300px auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
 }
 
-body header {
+body .container .inner .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  background: #2E4452;
+  width: 100%;
+  height: 100vh;
+}
+
+body .container .inner .sidebar .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .inner .sidebar .header a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: clamp(0px, 20vw, 110px);
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 
-body header h1 {
-  margin: 0 3em 0 0;
+body .container .inner .sidebar .header a img.logo {
+  width: 80%;
+  margin-top: 25px;
 }
 
-body header .divider-line {
-  margin: 0em 2em;
-  height: 60%;
-  width: clamp(0px, 1vw, 5px);
+body .container .inner .sidebar .button-list {
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 50px;
 }
 
-body header #btn-back {
-  margin: 0 0 0 2em;
-  width: clamp(5vh, 5vw, 50px);
-  height: clamp(5vh, 5vw, 50px);
-}
-
-body {
-  font-family: "poppins";
-  color: white;
-  overflow: hidden;
-}
-
-body header {
-  background: #2e2e2e;
-  border-right: 1vh solid white;
-  border-bottom: 1vh solid white;
-  border-bottom-right-radius: 100px;
-  -webkit-filter: drop-shadow(-15px 15px 0px #0000002f);
-          filter: drop-shadow(-15px 15px 0px #0000002f);
-}
-
-body header h1 {
-  font-family: "nunito";
-  font-size: clamp(20px, 5vw, 40px);
-  font-weight: bold;
-}
-
-body header .divider-line {
-  background: rgba(255, 255, 255, 0.219);
-}
-
-body header #btn-back {
-  border: none;
-  background: url("/public/modules/_lib/css/resources/home_btn.svg");
-  background-size: cover;
+body .container .inner .sidebar .button-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px 25px;
   cursor: pointer;
-  outline: none;
 }
 
-body .background-transition {
-  background: #2e2e2e;
+body .container .inner .sidebar .button-list ul li .button-icon {
+  width: 20px;
+}
+
+body .container .inner .sidebar .button-list ul li span {
+  margin-left: 25px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+body .container .inner .sidebar .button-list ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body .container .inner .sidebar .button-list ul li:hover .button-icon path {
+  fill: #4BB8A7;
+}
+
+body .container .inner .sidebar .button-list ul li:hover span {
+  color: #4BB8A7;
+}
+
+body .container .inner .sidebar .footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+body .container .inner .sidebar .footer a {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

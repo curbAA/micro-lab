@@ -138,53 +138,6 @@ body {
                             letter-spacing: 4px;
                         }
                     }
-
-                    .wip-notification {
-                        width: 400px;
-                        height: 250px;
-                        // border: 1px solid red;
-                        background: linear-gradient(to bottom right, rgba(47, 83, 136, 1), rgba(73, 139, 235, 1));
-                        display:flex;
-                        flex-flow: row wrap;
-                        justify-content: center;
-                        align-items: center;
-                        padding:30px;
-                        border-radius:20px;
-                        box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
-                        position:absolute;
-                        margin-left:50vw;
-
-                        .decoration{
-                            background: $base-red;
-                            width: 50px;
-                            height: 50px;
-                            position:absolute;
-                            margin-left:-200px;
-                            margin-top:-125px;
-                            border-radius:50px;
-                            display:flex;
-                            flex-flow:row wrap;
-                            justify-content: center;
-                            align-items: center;
-                            
-                            p{
-                                color:white;
-                                font-weight:700;
-                                font-size:30px;
-                                text-align: center;
-                                margin:0;
-                            }
-                        }
-                        
-                        p{
-                            // border: 1px solid red;
-                            color:white;
-                            font-size:14px;
-                            font-weight:300;
-                            margin-left:20px;
-                        }
-
-                    }
                 }
             }
 
@@ -201,20 +154,20 @@ body {
 
                         .title {
                             display: flex;
-                            flex-flow: row wrap;
+                            flex-flow: row nowrap;
                             align-items: center;
-                            justify-content: space-between;
 
                             p {
                                 font-size: $header-title-font-size;
                                 font-weight: 500;
+                                padding-right: 30px;
                                 // border:1px solid red;
                                 width: fit-content;
                                 color: $base-dark;
                             }
 
                             .line {
-                                width: 88%;
+                                width: 100%;
                                 height: 5px;
                                 background: $base-dark;
                             }
@@ -229,42 +182,94 @@ body {
                         }
                     }
 
-                    .about-content {
-                        // border:2px solid green;
-                        border-radius: 20px;
-                        padding: 20px;
-                        display: flex;
-                        flex-flow: row wrap;
+                    .content-container{
+                        // border:1px solid red;
+                        display:flex;
                         justify-content: space-between;
                         align-items: center;
-                        box-shadow: $container-shadow;
-                        margin-top: 20px;
-                        margin-left:30px;
-                        width:850px;
 
-                        .text {
+                        .about-content {
+                            // border:2px solid green;
+                            border-radius: 20px;
+                            padding: 20px;
                             display: flex;
                             flex-flow: row wrap;
-                            // border:1px solid red;
-                            height: auto;
-
-                            .line {
-                                width: 5px;
+                            justify-content: space-between;
+                            align-items: center;
+                            box-shadow: $container-shadow;
+                            margin-top: 20px;
+                            margin-left:30px;
+                            width:850px;
+    
+                            .text {
+                                display: flex;
+                                flex-flow: row wrap;
+                                // border:1px solid red;
                                 height: auto;
-                                margin-right: 20px;
-                                background: $base-blue;
+    
+                                .line {
+                                    width: 5px;
+                                    height: auto;
+                                    margin-right: 20px;
+                                    background: $base-blue;
+                                }
+    
+                                p {
+                                    font-size: $regular-font-size;
+                                    width: 400px;
+                                }
                             }
-
-                            p {
-                                font-size: $regular-font-size;
-                                width: 400px;
+    
+                            .text-decoration{
+                                img{
+                                    height:250px;
+                                }
                             }
                         }
-
-                        .text-decoration{
-                            img{
-                                height:250px;
+    
+                        .wip-notification {
+                            width: 400px;
+                            height: 250px;
+                            // border: 1px solid red;
+                            background: linear-gradient(to bottom right, rgba(47, 83, 136, 1), rgba(73, 139, 235, 1));
+                            display:flex;
+                            flex-flow: row wrap;
+                            justify-content: center;
+                            align-items: center;
+                            padding:30px;
+                            border-radius:20px;
+                            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
+                
+                            .decoration{
+                                background: $base-red;
+                                width: 50px;
+                                height: 50px;
+                                position:absolute;
+                                margin-left:-200px;
+                                margin-top:-125px;
+                                border-radius:50px;
+                                display:flex;
+                                flex-flow:row wrap;
+                                justify-content: center;
+                                align-items: center;
+                                
+                                p{
+                                    color:white;
+                                    font-weight:700;
+                                    font-size:30px;
+                                    text-align: center;
+                                    margin:0;
+                                }
                             }
+                            
+                            p{
+                                // border: 1px solid red;
+                                color:white;
+                                font-size:14px;
+                                font-weight:300;
+                                margin-left:20px;
+                            }
+                
                         }
                     }
                 }

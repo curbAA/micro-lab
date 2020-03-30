@@ -1,8 +1,7 @@
-// Imports --------------------------------------------------------------
-// Positioning --------------------------------------------------------------
 
     body{
-        // overflow:scroll;
+        overflow:hidden;
+        
         .page-content{
             width:100vw;
             height:90%;
@@ -56,7 +55,6 @@
 // Appearence --------------------------------------------------------------
 
     body{
-        background:linear-gradient(#934956, #D97575);
 
         .page-content{
             
