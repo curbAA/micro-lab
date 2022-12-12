@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "chart.js": "^2.9.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jshint": "^2.11.0",
     "requirejs": "^2.3.6",
     "serialport": "^8.0.7",
